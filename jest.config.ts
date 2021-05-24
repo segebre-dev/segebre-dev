@@ -1,6 +1,8 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
   roots: ['<rootDir>'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  moduleFileExtensions: ['tsx', 'ts', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
@@ -12,6 +14,19 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
   },
-}
+  bail: true,
+  clearMocks: true,
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
+  notify: true,
+  notifyMode: 'always',
+};
+
+export default config;
