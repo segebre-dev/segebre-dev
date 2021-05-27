@@ -14,7 +14,9 @@ const config: Config.InitialOptions = {
   ],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(svg|png)$': '<rootDir>/src/utils/__mocks__/img.ts',
   },
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   bail: true,
   clearMocks: true,
   coverageThreshold: {
