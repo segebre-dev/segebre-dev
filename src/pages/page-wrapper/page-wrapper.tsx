@@ -1,9 +1,9 @@
-import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import ExternalLink from '../../components/external-link';
 import styles from './styles.module.css';
+import type { PageWrapperProps } from './types';
 
-const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
+const PageWrapper = ({ children }: PageWrapperProps): React.ReactElement => {
   return (
     <>
       <Head>
@@ -14,9 +14,7 @@ const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
         />
       </Head>
       <div className={styles.container}>
-        <main className={styles.main}>
-          <Component {...pageProps} />
-        </main>
+        <main className={styles.main}>{children}</main>
 
         <footer className={styles.footer}>
           <span>Developed by</span>
@@ -50,4 +48,4 @@ const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
   );
 };
 
-export default App;
+export default PageWrapper;
