@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import ExternalLink from '../../components/external-link';
+import { basePath } from '../../utils/constants';
 import styles from './styles.module.css';
 import type { PageWrapperProps } from './types';
 
@@ -8,10 +9,7 @@ const PageWrapper = ({ children }: PageWrapperProps): React.ReactElement => {
     <>
       <Head>
         <title>segebre.dev</title>
-        <link
-          rel="icon"
-          href={`${process.env.__NEXT_ROUTER_BASEPATH}/favicon.png`}
-        />
+        <link rel="icon" href={`${basePath}/favicon.png`} />
       </Head>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
@@ -24,20 +22,14 @@ const PageWrapper = ({ children }: PageWrapperProps): React.ReactElement => {
               href="https://github.com/segebre-dev/segebre-dev"
               noA11yIcon
             >
-              <img
-                src={`${process.env.__NEXT_ROUTER_BASEPATH}/github.png`}
-                alt="Juan's GitHub page"
-              />
+              <img src={`${basePath}/github.png`} alt="Juan's GitHub page" />
             </ExternalLink>
-            <a href={process.env.__NEXT_ROUTER_BASEPATH}>
-              <img
-                src={`${process.env.__NEXT_ROUTER_BASEPATH}/favicon.png`}
-                alt="Juan's web page"
-              />
+            <a href={`${basePath}/`}>
+              <img src={`${basePath}/favicon.png`} alt="Juan's web page" />
             </a>
             <ExternalLink href="https://de.linkedin.com/in/segebre" noA11yIcon>
               <img
-                src={`${process.env.__NEXT_ROUTER_BASEPATH}/linkedin.png`}
+                src={`${basePath}/linkedin.png`}
                 alt="Juan's LinkedIn page"
               />
             </ExternalLink>
