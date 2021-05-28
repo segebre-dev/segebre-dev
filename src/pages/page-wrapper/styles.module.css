@@ -1,0 +1,36 @@
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  flex: auto;
+  padding: 24px 0;
+  max-width: 960px;
+}
+
+.footer {
+  width: 100%;
+  height: 14vh;
+  font-size: 2.5vh;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupOfLinks {
+  margin-top: 8px;
+}
+
+.groupOfLinks a + a {
+  margin-left: 8px;
+}
+
+.groupOfLinks img {
+  height: 4vh;
+}
