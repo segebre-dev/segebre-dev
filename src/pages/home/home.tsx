@@ -1,10 +1,11 @@
+import clsx from 'clsx';
 import { basePath } from '../../utils/constants';
 import styles from './styles.module.css';
 
 const Home = (): React.ReactElement => (
   <div className={styles.container}>
     <img src={`${basePath}/favicon.png`} alt="" className={styles.logo} />
-    <div className={styles.description}>
+    <h1 className={clsx(styles.text, styles.heading)}>
       Hello{' '}
       <span aria-hidden className={styles.icon}>
         👋
@@ -13,6 +14,8 @@ const Home = (): React.ReactElement => (
       <span aria-hidden className={styles.icon}>
         🎉
       </span>{' '}
+    </h1>
+    <div className={clsx(styles.text, styles.content)}>
       Here, I try to post things that I learn{' '}
       <span aria-hidden className={styles.icon}>
         🤓

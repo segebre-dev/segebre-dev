@@ -10,20 +10,26 @@
   width: 20%;
 }
 
-.description {
+.text {
   background: -webkit-linear-gradient(-45deg, blue, red);
   background-clip: inherit;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   max-width: 600px;
-  margin-top: 32px;
-  font-size: 3vh;
   font-family: 'DejaVu Sans Mono, monospace';
   font-style: italic;
   font-weight: 600;
   text-align: center;
   line-height: 1.5;
   padding: 0 8px;
+}
+
+.heading {
+  font-size: 3vh;
+}
+
+.content {
+  font-size: 2.5vh;
 }
 
 .icon {
