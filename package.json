@@ -1,7 +1,7 @@
 {
   "name": "segebre-dev",
   "author": "Juan Enrique Segebre Zaghmout",
-  "license": "MIT",
+  "license": "GNU GPLv3",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev -p ${HTTP_PORT:-3000}",
