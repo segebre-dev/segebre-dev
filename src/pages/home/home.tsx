@@ -46,6 +46,17 @@ const Home = (): React.ReactElement => (
         ❤️
       </span>
     </div>
+    <div className={clsx(styles.text, styles.preview)}>
+      {'--->'} First post is in the overn
+      <span aria-hidden className={styles.icon}>
+        🍞
+      </span>{' '}
+      and will be out soon
+      <span aria-hidden className={styles.icon}>
+        🙊
+      </span>
+      ! {'<---'}
+    </div>
   </div>
 );
 

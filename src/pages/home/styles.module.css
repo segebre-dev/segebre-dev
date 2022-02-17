@@ -32,6 +32,11 @@
   font-size: 2.5vh;
 }
 
+.preview {
+  margin-top: 5rem;
+  font-size: 2.5vh;
+}
+
 .icon {
   -webkit-text-fill-color: black;
   font-style: normal;
