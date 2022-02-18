@@ -47,7 +47,7 @@ const Home = (): React.ReactElement => (
       </span>
     </div>
     <div className={clsx(styles.text, styles.preview)}>
-      {'--->'} First post is in the overn
+      {'--->'} First post is in the oven
       <span aria-hidden className={styles.icon}>
         🍞
       </span>{' '}
