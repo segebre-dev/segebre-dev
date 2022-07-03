@@ -1,4 +1,7 @@
-module.exports = {
+/** @type {import('next').NextConfig}*/
+
+const withMDX = require('@next/mdx')()
+module.exports = withMDX({
   reactStrictMode: true,
   webpack: (config) => {
     config.module.rules.push({
@@ -13,4 +16,4 @@ module.exports = {
     locales: ['en'],
     defaultLocale: 'en',
   },
-};
+});
