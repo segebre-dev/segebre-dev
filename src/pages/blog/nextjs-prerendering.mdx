@@ -1,1 +1,357 @@
-# Next.js Pre-rendering
+{/*
+# Steps for tutorial
+
+## Create a nextJS app
+
+```bash
+npx create-next-app
+```
+
+- Don't use yarn as npm is wider known
+- Don't use TypeScript as it is not the purpose of the tutorial
+*/}
+
+# Content
+
+This is a condensed and targeted resource, for this
+reason, this tutorial assumes some knowledge of Next.js and emphasized
+in the Pre-rendering feature. For compatibility reasons, the terms used here are based on the terms used by Next.js on their documentation about this topic.
+
+## Questions to answer
+
+- **How do pages load?** HTML then JS
+- **What is Pre-rendering?** Show diagram with client, frontend server, resources(backend)
+- [Useful summary link](https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering)
+
+## ReactJS solution
+
+[ToDo] Check if you really want to show this. Do you want to do another post instead to better show this vanilla wise?
+
+What is pre-rendering (Should be another post)
+
+- Does hydration
+
+### Advantages of pre-rendering
+
+- Can result in better performance
+- SEO (google might not care)
+- Faster TTFP (Time To First Pixel)
+
+### Disadvantages of pre-rendering
+
+- Site is not interactive until JS is loaded
+
+## NextJS solution
+
+By default Next.js pre-renders every page. Next.js offers [two forms of pre-rendering](https://nextjs.org/docs/basic-features/pages#two-forms-of-pre-rendering):
+
+1. Static Generation
+   - What does it mean?
+     - The HTML is generated on the server once at build time.
+   - What is it used for?
+     - Content that we know at compile time, for example, content that does not change from user to user.
+1. Server Side Rendering
+   - What does it mean?
+     - The HTML is generated in the server on every request.
+   - What is it used for?
+     - Content that we do not know at compile time, like content that is user specific.
+
+You can use either of these per page, not all pages in an app have to be
+Statically Generated or Server Side Rendered. However, one page cannot be
+both Statically Generated and Server Side Rendered, we will see more of
+this later.
+
+---
+
+## Static Generation
+
+This is the default way Next.js does pre-rendering. The pages are generated only once and this is done at build time. That means that every time this page is requested in the future, the generated page will be reused.
+
+This section refers to the [documentation from Next.js on Static Generation](https://nextjs.org/docs/basic-features/pages#static-generation-recommended).
+
+### Static Generation without data
+
+So how do we tell Next.js to statically generate a site? Well, this is already done by default without you needing to do anything extra. Pre-rendering is an opt-out feature in Next.js, meaning you have to explicitly opt out if you do not want it. Later on this post, you can read [how to explicitly opt out of pre-rendering using dynamic import](#without-pre-rendering).
+
+Here is an [example of a statically generated page without data]().
+
+Check this video to better understand what is the difference when pre-rendering vs not pre-rendering.
+
+[video showing pre-rendered vs no pre-rendering]
+
+> A11y: Video showing how you can see if a site is pre-rendered by opening the network tab on chrome's dev tools. If the page is pre-rendered, the preview of the first HTML call to the server will show the complete site without CSS. If the page is not being pre-rendered, the preview of the first HTML call to the server will be a blank page. A blank page means that the initial HTML is only used to fetch the scripts which will populate the page after being downloaded.
+
+This section refers to the [documentation from Next.js on Static Generation without data](https://nextjs.org/docs/basic-features/pages#static-generation-without-data).
+
+### Static Generation with data
+
+Previously we learned [how to use static generation without data](#static-generation-without-data), but sometimes, external resources are needed. For this scenario, Next.js gives us `getStaticProps`. Basically, an asynchronous function that can retrieve resources(database, external API, local filesystem, etc) and return the props that will be sent to the default exported component of the page.
+
+The way we use it is by exporting the named function `getStaticProps` on the page file. This function receives a `context` object and should return an object which includes `props`, `revalidate`, `notFound`, and `redirect`. You can [read more about the parameter and return objects of the `getStaticProps` function in Next.js's official documentation](https://nextjs.org/docs/api-reference/data-fetching/get-static-props#getstaticprops-return-values).
+
+#### The `props` key
+
+Ok, lets focus on what `getStaticProps` returns. First thing we want to pay attention to is `props`(the only required key of the return object), this will be sent directly to the default exported component of the page. Then, the component can use this to render what it would normally do. For example:
+
+```jsx
+export async function getStaticProps() {
+  const props = {
+    visitCount: 123,
+    posts: [
+      { id: 10, title: 'Spring' },
+      { id: 7, title: 'Summer' },
+      { id: 12, title: 'Fall' },
+      { id: 15, title: 'Winter' },
+    ],
+  };
+
+  return {
+    props,
+  };
+}
+```
+
+Would feed the `props` object to the `Posts` component since it is the default exported component of the page.
+
+```jsx
+export default function Posts({ posts }) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <p>The site has been visited a total of {visitCount}</p>
+      <ul>
+        {posts.map(({ id, title }) => (
+          <li>
+            {id}. {title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+But as mentioned before, we would usually use `getStaticProps` function to get external resources, so image something like this instead.
+
+```jsx
+export async function getStaticProps() {
+  const res = await fetch('https://some-url.com/api/posts');
+  const posts = await res.json();
+  const props = { posts }
+
+  return {
+    props,
+  };
+}
+```
+
+The `getStaticProps` function runs first. In this case, it fetches the resources, parses them as json, and return them as the `props`. This `props` are then received by the page's default exported component and the default exported component generates the view. Remember, this all happens at build time, so this only happens once. When a user requests the this page, Next.js will serve the previously generated page.
+
+#### The `revalidate` key
+
+Wait, if this runs at build time and Next.js serves the previously generated page, the posts would be soon outdated and we would have to rebuild the whole site to update them, right? Well, the analysis is correct, but we can avoid rebuilding the whole site and just regenerating this page by including the `revalidate` key in the object returned by `getStaticProps` as shown below.
+
+```jsx
+export async function getStaticProps() {
+  const res = await fetch('https://some-url.com/api/posts');
+  const posts = await res.json();
+
+  return {
+    props: { posts },
+    revalidate: 60,
+  };
+}
+```
+
+`revalidate` expects time in seconds. In the example above, the page would be regenerated every time a user requests the page and 60 seconds have passed from the last time the page was generated. The user that makes the request which triggers the regeneration will receive the stale page and the next user will receive the newly generated page.
+
+[Video]
+
+It is important to note that setting 60 seconds as the revalidate time does not mean that the page will be regenerated every 60 seconds, but only when a request for the page has been made and at least 60 seconds from the last regeneration has passed.
+
+You can check the [`getStaticProps` section of the data fetching documentation](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) to get a more in depth understanding of how to use `getStaticProps` and what if offers.
+
+### Static Generation for dynamic routes
+
+Ok, so we [learned how to leverage static generation with data](#static-generation-with-data), but what if we wanted to statically generate pages with [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes)? In the context of the example above, what if we wanted to statically generate each of the posts as well? To solve this need, Next.js gives us `getStaticPaths`. `getStaticPaths` is an asynchronous function that tells Next.js which dynamic routes of the page to statically generate the content for.
+
+[//]: # "For each path returned by `getStaticPaths`, Next.js will repeat the same process as we learned before: run the `getStaticProps` function and send the props to the default exported component to statically generate the page's content."
+
+`getStaticPaths` receives no parameters and has to return an object with a `paths` key and a `fallback` key.
+
+#### The `paths` key
+
+The `paths` key defines the paths of the pages which will be statically generated at build time. The paths are defined as an array of objects with a `params` key. The `params` key holds an object which has the route parameters as keys and their respective values. For example, assuming we have a `pages/posts/[id].js` file, if the `paths` object is set to:
+
+```jsx
+[
+  { params: { id: 2 } },
+  { params: { id: 5 } },
+  { params: { id: 9 } },
+  { params: { id: 6 } },
+];
+```
+
+then, Next.js will statically generate the pages `posts/2`, `posts/5`, `posts/9`, and `posts/6`. Next.js will statically generate this pages using the respective code, in this case, the code located at `pages/posts/[id].js`. Next.js will call the `getStaticProps` of the `pages/posts/[id].js` file with each object of the `paths` array. Finally, as we learned in the [Static Generation with data section](#static-generation-with-data) above, the `props` returned by `getStaticProps` will be sent to the default exported component and the page will be statically generated; all of this, during build time.
+
+The alternative to using `getStaticPaths` would have been to add each of the pages manually(`pages/posts/2.js`, `pages/posts/5.js`, etc), instead of using dynamic routes, and then statically generate each of them. You can imagine how this would not have been flexible nor scalable and would have been very tedious to work with.
+
+#### The `fallback` key (set to `false`)
+
+The `fallback` key tells Next.js what to do when a path that was not returned in the `paths` array is requested by the user. Setting `fallback` to `false` will result in a `404` page when a path not returned by `getStaticPaths` is requested.
+
+```jsx
+export async function getStaticPaths() {
+  const res = await fetch('https://some-url.com/api/posts');
+  const posts = await res.json();
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+  // We'll pre-render these paths at build time.
+  return { paths, fallback: false };
+}
+```
+
+In this case, we will statically generate all the posts. So, if the user requests a page we did not statically generate, we would want the user to be redirected to a `404` because this post is not found.
+
+#### The `fallback` key (set to `'blocking'`)
+
+Well, what if we had a lot of posts? It wouldn't be ideal to statically generate all the posts at build time because it would take too long to build our project and some posts might not even be requested. Because of this, we will focus on the latest three posts created.
+
+```jsx
+export async function getStaticPaths() {
+  const res = await fetch('https://some-url.com/api/posts?order=latest');
+  const posts = await res.json();
+  const latestThreePosts = posts.slice(0, 2);
+
+  // Get the paths we want to pre-render based on posts
+  const paths = latestThreePosts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  return { paths, fallback: false };
+}
+```
+
+The problem with limiting the `paths` and setting the `fallback` to `false` is that trying to access any other post that we did not return on the `paths` will result in a `404` page. To avoid this, we can set the `fallback` to `'blocking'`. When `fallback` is set to `blocking` the user will be redirected to the page until the page is pre-rendered. Once the page is pre-rendered, it will be saved and ready for next time. For this to happen, we would need our `getStaticPaths` function to look like this
+
+```jsx
+export async function getStaticPaths() {
+  const res = await fetch('https://some-url.com/api/posts?order=latest');
+  const posts = await res.json();
+  const latestThreePosts = posts.slice(0, 2);
+
+  // Get the paths we want to pre-render based on posts
+  const paths = latestThreePosts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  return { paths, fallback: 'blocking' };
+}
+```
+
+#### The `fallback` key (set to `true`)
+
+If waiting for the page to be pre-rendered is takes too long, we could also use a fallback UI which will be shown while the page is being pre-rendered. Let's add a "Loading..." message to be shown while the page is pre-rendered. To do this, we can set the `fallback` to `true`, then, we can check the `isFallback` value from `router` and conditionally render what we want. Everything together would look like this:
+
+```jsx
+export async function getStaticPaths() {
+  const res = await fetch('https://some-url.com/api/posts?order=latest');
+  const posts = await res.json();
+  const latestThreePosts = posts.slice(0, 2);
+
+  // Get the paths we want to pre-render based on posts
+  const paths = latestThreePosts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  return { paths, fallback: true };
+}
+
+// Gets called once per item in the `paths` array returned by `getStaticPaths`
+export async function getStaticProps({ params }) {
+  // Get the post the user is requesting
+  const res = await fetch(`https://some-url.com/api/posts/${params.id}`);
+  const post = await res.json();
+
+  // returned the fetched post
+  return { props: { post } };
+}
+
+export default function Post({ post }) {
+  const router = useRouter();
+
+  // Check if this is a fallback render
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  // Render the post title
+  return <h1>{post.title}</h1>;
+}
+```
+
+You can check the [`getStaticPaths` section of the data fetching documentation](https://nextjs.org/docs/api-reference/data-fetching/get-static-paths) to get a more in depth understanding of how to use `getStaticPaths` and what if offers.
+
+This section refers to the [documentation from Next.js on Static Generation without data](https://nextjs.org/docs/basic-features/pages#static-generation-without-data).
+
+## Server-side Rendering
+
+We learned about [Static Generation](#static-generation) and how it runs at build time. However, sometimes we don't know in advance, at build time, what we need to render. This is were Server-side Rendering comes into play.
+
+As mentioned previously, Server-side Rendering happens during runtime, on each request. This would be ideal, for example, for a profile page because we do not know who will request it.
+
+Next.js offers us `getServerSideProps` to do this, and, like with `getStaticProps`, will pre-render the page with the props returned. The difference with Static Generation being that `getServerSideProps` will be called and the page will be generated on every request rather than exclusively on build.
+
+Take a look at the following snippet.
+
+```jsx
+export async function getServerSideProps() {
+  const res = await fetch('https://some-url.com/api/profile');
+  const user = await res.json();
+
+  return {
+    props: { user },
+  };
+}
+```
+
+You can check the [`getServerSideProps` section of the data fetching documentation](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props) to get a more in depth understanding of how to use `getServerSideProps` and what if offers.
+
+This section refers to the [documentation from Next.js on Server-side Rendering](https://nextjs.org/docs/basic-features/pages#server-side-rendering).
+
+
+## Further considerations
+
+
+[You can safely write server side code direclty when pre-rendering pages](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#write-server-side-code-directly). Any code inside `getStaticProps`, `getStaticPaths`, and `getServerSideProps`, that is not referenced outside this functions, will not be included in JS bundle for the browser. You can [validate what code will be removed, and therefore not be included in JS bundle, using this tool](https://next-code-elimination.vercel.app/).
+
+
+## Without pre-rendering
+
+Next.js supports [dynamic imports](https://nextjs.org/docs/advanced-features/dynamic-import), which gives us the option to [avoid pre-rendering](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr).
+
+Dynamic import was used in the Static Generation section of this post to show the About page with no pre-rendering. This was done by importing the about page in the callback sent to the dynamic function and setting the `ssr` option to false. You can refer to this code in the [`/pages/no-prerendering.js` file](https://github.com/Segebre/nextjs-prerendering/tree/main/pages/no-prerendering.js).
+
+## Final thoughts
+
+Remember to check the
+[NextJS documentation on Pre-rendering](https://nextjs.org/docs/basic-features/pages#pre-rendering)
+for anything I missed or any future updates from NextJS. (For spanish users)
+Unfortunately, their documentation is currently only available in English.
+
+I researched this topic and tried to express what I learned through this post. Please point out any mistakes and/or improvements to avoid misinformation. Thank you all in advance for both reading and/or contributing to the post and for helping spread knowledge to anyone wanting to learn.
+
+[To-do]
+Extract footer and header
+
+[Add]
+
+- [pre-render functions are only called in server and are not sent to the client](https://nextjs.org/docs/basic-features/data-fetching#write-server-side-code-directly)
+- Hover effect on social media
