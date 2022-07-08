@@ -330,7 +330,7 @@ This section refers to the [documentation from Next.js on Server-side Rendering]
 ## Further considerations
 
 
-[You can safely write server side code direclty when pre-rendering pages](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#write-server-side-code-directly). Any code inside `getStaticProps`, `getStaticPaths`, and `getServerSideProps`, that is not referenced outside this functions, will not be included in JS bundle for the browser. You can [validate what code will be removed, and therefore not be included in JS bundle, using this tool](https://next-code-elimination.vercel.app/).
+[You can safely write server side code directly when pre-rendering pages](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#write-server-side-code-directly). Any code inside `getStaticProps`, `getStaticPaths`, and `getServerSideProps`, that is not referenced outside this functions, will not be included in JS bundle for the browser. [Using this tool, you can validate what code will be removed and therefore not be included in the JS bundle](https://next-code-elimination.vercel.app/).
 
 
 ## Without pre-rendering
