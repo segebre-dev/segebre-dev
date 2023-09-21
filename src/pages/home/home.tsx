@@ -64,7 +64,7 @@ const Home = (): React.ReactElement => (
         href="https://foobar.agency/blog/software-engineering/An-analogy-on-JavaScript%E2%80%99s-single-threaded-asynchronicity"
         noA11yIcon
       >
-        one of my previously written post
+        one of my previously written posts
       </ExternalLink>{' '}
       <span aria-hidden className={styles.icon}>
         ✌️
