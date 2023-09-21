@@ -13,3 +13,16 @@ it('renders main message', () => {
   ).toBeVisible();
   expect(screen.getByText(/Thank you in advance!/)).toBeVisible();
 });
+
+it('renders link to external blog post', () => {
+  render(<Home />);
+
+  const externalBlogPostLink = screen.getByRole('link', {
+    name: /previously written post/,
+  });
+  expect(externalBlogPostLink).toBeInTheDocument();
+  expect(externalBlogPostLink).toHaveAttribute(
+    'href',
+    'https://foobar.agency/blog/software-engineering/An-analogy-on-JavaScript%E2%80%99s-single-threaded-asynchronicity'
+  );
+});
