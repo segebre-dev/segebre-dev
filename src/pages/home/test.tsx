@@ -23,6 +23,6 @@ it('renders link to external blog post', () => {
   expect(externalBlogPostLink).toBeInTheDocument();
   expect(externalBlogPostLink).toHaveAttribute(
     'href',
-    'https://foobar.agency/blog/software-engineering/An-analogy-on-JavaScript%E2%80%99s-single-threaded-asynchronicity'
+    'https://foobar.agency/blog/software-engineering/An-analogy-of-JavaScript%E2%80%99s-single-threaded-asynchronicity'
   );
 });

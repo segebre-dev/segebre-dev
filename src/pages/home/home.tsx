@@ -61,7 +61,7 @@ const Home = (): React.ReactElement => (
     <div className={clsx(styles.text, styles.preview)}>
       In the meantime, check out{' '}
       <ExternalLink
-        href="https://foobar.agency/blog/software-engineering/An-analogy-on-JavaScript%E2%80%99s-single-threaded-asynchronicity"
+        href="https://foobar.agency/blog/software-engineering/An-analogy-of-JavaScript%E2%80%99s-single-threaded-asynchronicity"
         noA11yIcon
       >
         one of my previously written posts
