@@ -17,6 +17,7 @@ const config: Config.InitialOptions = {
     '\\.(svg|png)$': '<rootDir>/src/utils/__mocks__/img.ts',
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  testEnvironment: 'jest-environment-jsdom',
   bail: true,
   clearMocks: true,
   coverageThreshold: {
@@ -27,8 +28,6 @@ const config: Config.InitialOptions = {
       statements: 80,
     },
   },
-  notify: true,
-  notifyMode: 'always',
 };
 
 export default config;
