@@ -1,4 +1,6 @@
-svg.inlineIcon {
-  top: 0.125em;
-  position: relative;
+svg {
+  &.inlineIcon {
+    top: 0.125em;
+    position: relative;
+  }
 }

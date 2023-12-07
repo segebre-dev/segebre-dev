@@ -22,14 +22,14 @@
   text-align: center;
   line-height: 1.5;
   padding: 0 8px;
-}
 
-.text a {
-  text-decoration: blueviolet wavy underline;
-}
+  & a {
+    text-decoration: blueviolet wavy underline;
 
-.text a:hover {
-  text-decoration: blue solid underline;
+    &:hover {
+      text-decoration: blue solid underline;
+    }
+  }
 }
 
 .heading {

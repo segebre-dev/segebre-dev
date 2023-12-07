@@ -25,12 +25,12 @@
 
 .groupOfLinks {
   margin-top: 8px;
-}
 
-.groupOfLinks a + a {
-  margin-left: 8px;
-}
+  & a + a {
+    margin-left: 8px;
+  }
 
-.groupOfLinks img {
-  height: 4vh;
+  & img {
+    height: 4vh;
+  }
 }
