@@ -28,8 +28,6 @@ const config: Config.InitialOptions = {
       statements: 80,
     },
   },
-  notify: true,
-  notifyMode: 'always',
 };
 
 export default config;
