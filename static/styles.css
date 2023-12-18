@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line selector-id-pattern -- Used for `div#__next` because Next.js sets this id */
 html,
 body,
 div#__next {
