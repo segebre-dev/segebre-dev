@@ -11,8 +11,9 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
+    "stylelint": "stylelint '**/*.css' --fix",
     "test": "jest",
-    "test-all": "yarn lint && yarn type-check && yarn test",
+    "test-all": "yarn lint && yarn stylelint && yarn type-check && yarn test",
     "prepare": "husky install"
   },
   "lint-staged": {
