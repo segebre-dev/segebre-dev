@@ -1,0 +1,5 @@
+@value text from '../home/styles.module.css';
+
+.title {
+  composes: text;
+}
