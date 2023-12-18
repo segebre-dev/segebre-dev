@@ -1,0 +1,31 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@value",
+      "description": "You can export and create values/variables with CSS Modules.",
+      "references": [
+        {
+          "name": "CSS Modules Documentation",
+          "url": "https://github.com/css-modules/css-modules/blob/master/docs/values-variables.md"
+        },
+        {
+          "name": "CSS Modules (Values) Documentation",
+          "url": "https://github.com/css-modules/postcss-modules-values"
+        }
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "composes",
+      "description": "You can compose classes with CSS Modules.",
+      "references": [
+        {
+          "name": "CSS Modules Documentation",
+          "url": "https://github.com/css-modules/css-modules?tab=readme-ov-file#composition"
+        }
+      ]
+    }
+  ]
+}
