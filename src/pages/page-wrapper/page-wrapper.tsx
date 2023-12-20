@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import ExternalLink from '../../components/external-link';
 import { basePath } from '../../utils/constants';
-import styles from './styles.module.css';
+import styles from './styles';
 import type { PageWrapperProps } from './types';
 
 const PageWrapper = ({ children }: PageWrapperProps): React.ReactElement => {

@@ -10,7 +10,7 @@
   width: 20%;
 }
 
-.text {
+.composableText {
   max-width: 600px;
   padding: 0 8px;
   font-family: 'DejaVu Sans Mono, monospace'; /* stylelint-disable-line font-family-no-missing-generic-family-keyword -- Will be refactored with website re-design */
@@ -32,14 +32,17 @@
 }
 
 .heading {
+  composes: composableText;
   font-size: 3vh;
 }
 
 .content {
+  composes: composableText;
   font-size: 2.5vh;
 }
 
 .preview {
+  composes: composableText;
   margin-top: 5rem;
   font-size: 2.5vh;
 }
