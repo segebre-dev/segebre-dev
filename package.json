@@ -11,9 +11,10 @@
     "format": "prettier --write .",
     "stylelint": "stylelint '**/*.css' --fix",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
+    "generate-css-types": "tcm -e src",
     "type-check": "tsc --pretty --noEmit",
     "test": "jest",
-    "normalize": "yarn format && yarn stylelint && yarn lint && yarn type-check && yarn test",
+    "normalize": "yarn format && yarn stylelint && yarn lint && yarn generate-css-types && yarn type-check && yarn test",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -23,7 +24,6 @@
     ]
   },
   "dependencies": {
-    "clsx": "2.0.0",
     "next": "14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -61,6 +61,7 @@
     "stylelint-config-recess-order": "4.4.0",
     "stylelint-config-standard": "35.0.0",
     "ts-node": "10.9.1",
+    "typed-css-modules": "0.8.1",
     "typescript": "5.3.3"
   }
 }
