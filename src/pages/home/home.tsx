@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { ExternalLink } from '../../components/external-link';
 import { basePath } from '../../utils/constants';
 import styles from './styles';
@@ -6,7 +5,7 @@ import styles from './styles';
 const Home = (): React.ReactElement => (
   <div className={styles.container}>
     <img src={`${basePath}/favicon.png`} alt="" className={styles.logo} />
-    <h1 className={clsx(styles.text, styles.heading)}>
+    <h1 className={styles.heading}>
       Hello{' '}
       <span aria-hidden className={styles.icon}>
         👋
@@ -16,7 +15,7 @@ const Home = (): React.ReactElement => (
         🎉
       </span>{' '}
     </h1>
-    <div className={clsx(styles.text, styles.content)}>
+    <div className={styles.content}>
       Here, I try to post things that I learn{' '}
       <span aria-hidden className={styles.icon}>
         🤓
@@ -47,7 +46,7 @@ const Home = (): React.ReactElement => (
         ❤️
       </span>
     </div>
-    <div className={clsx(styles.text, styles.preview)}>
+    <div className={styles.preview}>
       {'--->'} First post is in the oven
       <span aria-hidden className={styles.icon}>
         🍞
@@ -58,7 +57,7 @@ const Home = (): React.ReactElement => (
       </span>
       ! {'<---'}
     </div>
-    <div className={clsx(styles.text, styles.preview)}>
+    <div className={styles.preview}>
       In the meantime, check out{' '}
       <ExternalLink
         href="https://foobar.agency/blog/software-engineering/An-analogy-of-JavaScript%E2%80%99s-single-threaded-asynchronicity"
