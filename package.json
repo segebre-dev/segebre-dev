@@ -11,9 +11,10 @@
     "format": "prettier --write .",
     "stylelint": "stylelint '**/*.css' --fix",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
+    "generate-css-types": "tcm -e src",
     "type-check": "tsc --pretty --noEmit",
     "test": "jest",
-    "normalize": "yarn format && yarn stylelint && yarn lint && yarn type-check && yarn test",
+    "normalize": "yarn format && yarn stylelint && yarn lint && yarn generate-css-types && yarn type-check && yarn test",
     "prepare": "husky install"
   },
   "lint-staged": {
