@@ -1,1 +1,5 @@
-export { default } from './styles.module.css';
+import * as stylesFile from './styles.module.css';
+
+const { __esModule, ...stylesToExport } = stylesFile;
+
+export { stylesToExport as default };
