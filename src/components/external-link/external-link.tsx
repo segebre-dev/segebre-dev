@@ -1,5 +1,5 @@
 import ExternalLinkIcon from './icon.svg';
-import styles from './styles.module.css';
+import styles from './styles';
 import type { ExternalLinkProps } from './types';
 
 const ExternalLink = ({

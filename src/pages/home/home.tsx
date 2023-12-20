@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ExternalLink } from '../../components/external-link';
 import { basePath } from '../../utils/constants';
-import styles from './styles.module.css';
+import styles from './styles';
 
 const Home = (): React.ReactElement => (
   <div className={styles.container}>
