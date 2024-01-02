@@ -1,6 +1,6 @@
 import { ExternalLink } from '../../components/external-link';
 import { basePath } from '../../utils/constants';
-import styles from './styles';
+import styles from './styles.module.css';
 
 const Home = (): React.ReactElement => (
   <div className={styles.container}>
