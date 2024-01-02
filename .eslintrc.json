@@ -46,7 +46,7 @@
       2,
       {
         "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^(?:_|composable)"
+        "varsIgnorePattern": "^_"
       }
     ],
     "no-console": [
