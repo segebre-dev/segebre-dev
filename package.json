@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "stylelint": "stylelint '**/*.css' --fix",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
-    "generate-css-types": "tcm src",
+    "generate-css-types": "tcm -p '**/[!global]*.css' src",
     "type-check": "tsc --pretty --noEmit",
     "test": "jest",
     "normalize": "yarn format && yarn stylelint && yarn lint && yarn generate-css-types && yarn type-check && yarn test",
