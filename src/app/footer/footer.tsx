@@ -1,6 +1,8 @@
+import styles from './styles.module.css';
+
 const Footer = () => {
   return (
-    <footer>
+    <footer className={styles.container}>
       <p>Developed by Juan Enrique Segebre Zaghmout</p>
     </footer>
   );
