@@ -8,7 +8,7 @@
     "build": "next build",
     "build:clean": "rm -rf .next/",
     "start": "next start -p ${HTTP_PORT:-3000}",
-    "generate-css-types": "tcm -p '**/[!global]*.css' src",
+    "generate-css-types": "tcm -p '**/*.module.css' src",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "stylelint": "stylelint '**/*.css' --fix",
