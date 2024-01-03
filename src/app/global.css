@@ -45,6 +45,7 @@ h6 {
 html {
   /* Colors */
   --color-neutral-background: #101928; /* Grey/900 */
+  --color-neutral-border: #1d2739; /* Grey/800 */
   --color-neutral-text: #f7f9fc; /* Grey/75 */
 
   /* Spacing */
@@ -56,33 +57,30 @@ html {
   --spacing-xl: 2.75rem; /* 44px */
   --spacing-xxl: 3.5rem; /* 56 */
   --spacing-3xl: 4.5rem; /* 72 */
-
   --spacing-grid-gap: 1.125rem;
 
-  @media (min-width: 48rem) {
+  @media (width >= 48rem) {
     --spacing-xl: 3rem;
     --spacing-xxl: 4rem;
     --spacing-3xl: 5rem;
-
     --spacing-grid-gap: 1rem;
   }
 
-  @media (min-width: 64rem) {
+  @media (width >= 64rem) {
     --spacing-xl: 3.25rem;
     --spacing-xxl: 5rem;
     --spacing-3xl: 6rem;
   }
 
-  @media (min-width: 90rem) {
+  @media (width >= 90rem) {
     --spacing-l: 2.5rem;
     --spacing-xl: 3.75rem;
     --spacing-xxl: 5.5rem;
     --spacing-3xl: 6.75rem;
-
     --spacing-grid-gap: 1.25rem;
   }
 
-  @media (min-width: 120rem) {
+  @media (width >= 120rem) {
     --spacing-m: 1.75rem;
     --spacing-l: 3rem;
     --spacing-xl: 4.5rem;
