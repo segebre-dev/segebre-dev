@@ -34,5 +34,6 @@ it('renders the link to the LinkedIn page', () => {
 it('renders the author message', () => {
   render(<Footer />);
 
-  expect(screen.getByText('Developed by Juan Enrique Segebre Zaghmout'));
+  expect(screen.getByText(/Developed by/)).toBeInTheDocument();
+  expect(screen.getByText(/Juan Enrique Segebre Zaghmout/)).toBeInTheDocument();
 });

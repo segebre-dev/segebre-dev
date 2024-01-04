@@ -16,7 +16,10 @@ const Footer = () => {
           <LinkedInIcon alt="Juan's LinkedIn page" />
         </ExternalLink>
       </div>
-      <p>Developed by Juan Enrique Segebre Zaghmout</p>
+      <div className={styles.authorMessageContainer}>
+        <p>Developed by</p>
+        <p>Juan Enrique Segebre Zaghmout</p>
+      </div>
     </footer>
   );
 };

@@ -13,3 +13,15 @@
   display: flex;
   gap: var(--spacing-m);
 }
+
+.authorMessageContainer {
+  text-align: center;
+
+  & > p {
+    display: inline-block;
+
+    & + & {
+      margin-left: var(--spacing-xxs);
+    }
+  }
+}
