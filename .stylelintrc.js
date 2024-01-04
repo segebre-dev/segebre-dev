@@ -24,7 +24,7 @@ module.exports = {
     'declaration-property-value-allowed-list': [
       {
         '/(?=^[^-]{2}).*color/': '/var\\(--color/',
-        '/(?=^[^-]{2}).*(?:gap|padding)/': '/var\\(--spacing/',
+        '/(?=^[^-]{2}).*(?:gap|padding|margin)/': '/var\\(--spacing|0/',
       },
       {
         message:
