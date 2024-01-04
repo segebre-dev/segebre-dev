@@ -90,4 +90,5 @@ html {
 
   /* defaults */
   color: var(--color-neutral-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
