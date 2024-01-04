@@ -1,33 +1,46 @@
-import type { Config } from '@jest/types';
+/**
+ * Initial reference to configuration taken from Next.js docs
+ * https://nextjs.org/docs/app/building-your-application/testing/jest
+ * */
+import type { Config } from 'jest';
+import nextJest from 'next/jest.js';
 
-const config: Config.InitialOptions = {
-  roots: ['<rootDir>'],
-  moduleFileExtensions: ['tsx', 'ts', 'js', 'json', 'jsx'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
-  },
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
+const createJestConfig = nextJest({
+  dir: './',
+});
+
+const config: Config = {
+  coverageProvider: 'v8',
+  testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(svg|png)$': '<rootDir>/src/utils/__mocks__/img.ts',
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
-  testEnvironment: 'jest-environment-jsdom',
-  bail: true,
   clearMocks: true,
   coverageThreshold: {
     global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80,
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
     },
   },
 };
 
-export default config;
+const jestConfig = async () => {
+  const nextJestConfig = await createJestConfig(config)();
+
+  return {
+    ...nextJestConfig,
+    moduleNameMapper: {
+      /**
+       * Workaround to put our SVG mock first inspired by `cam-eo`
+       * `https://github.com/vercel/next.js/discussions/42535`
+       */
+      '\\.svg$': '<rootDir>/src/utils/__mocks__/img.ts',
+      ...nextJestConfig.moduleNameMapper,
+    },
+  };
+};
+
+export default jestConfig;
