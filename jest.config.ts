@@ -12,9 +12,6 @@ const createJestConfig = nextJest({
 const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jest-environment-jsdom',
-  moduleNameMapper: {
-    '\\.(svg|png)$': '<rootDir>/src/utils/__mocks__/img.ts',
-  },
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
   clearMocks: true,
   coverageThreshold: {
@@ -37,7 +34,7 @@ const jestConfig = async () => {
        * Workaround to put our SVG mock first inspired by `cam-eo`
        * `https://github.com/vercel/next.js/discussions/42535`
        */
-      '\\.svg$': '<rootDir>/src/utils/__mocks__/img.ts',
+      '\\.svg$': '<rootDir>/src/utils/__mocks__/svg.ts',
       ...nextJestConfig.moduleNameMapper,
     },
   };
