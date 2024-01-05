@@ -2,8 +2,8 @@
  * Initial reference to configuration taken from Next.js docs
  * https://nextjs.org/docs/app/building-your-application/testing/jest
  * */
-import type { Config } from 'jest';
 import nextJest from 'next/jest.js';
+import type { Config } from 'jest';
 
 const createJestConfig = nextJest({
   dir: './',
