@@ -1,7 +1,8 @@
-import { APropsWithoutRef } from 'react-html-props';
+import { AProps } from 'react-html-props';
 
-interface ExternalLinkProps extends APropsWithoutRef {
-  noA11yIcon?: boolean;
-}
+type ExternalLinkProps = AProps &
+  Required<Pick<AProps, 'href' | 'children'>> & {
+    noA11yIcon?: boolean;
+  };
 
 export type { ExternalLinkProps };
