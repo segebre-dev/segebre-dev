@@ -10,5 +10,8 @@
 }
 
 .content {
+  display: flex;
   flex: auto;
+  justify-content: center;
+  margin-top: var(--spacing-xxl);
 }
