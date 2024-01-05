@@ -47,6 +47,7 @@ html {
   --color-neutral-background: #101928; /* Grey/900 */
   --color-neutral-border: #1d2739; /* Grey/800 */
   --color-neutral-text: #f7f9fc; /* Grey/75 */
+  --color-neutral-outline: #f9fafb; /* Grey/50 */
 
   /* Spacing */
   --spacing-xxs: 0.25rem; /* 4px */
