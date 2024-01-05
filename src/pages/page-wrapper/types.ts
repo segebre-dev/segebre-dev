@@ -1,5 +1,5 @@
-interface PageWrapperProps {
+type PageWrapperProps = {
   children: React.ReactNode;
-}
+};
 
 export type { PageWrapperProps };
