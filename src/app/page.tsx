@@ -1,5 +1,7 @@
+import ProfilePicture from './profile-picture';
+
 const Page = () => {
-  return <></>;
+  return <ProfilePicture />;
 };
 
 export default Page;
