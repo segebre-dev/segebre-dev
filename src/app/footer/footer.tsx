@@ -1,4 +1,4 @@
-import ExternalLink from '../../components/external-link';
+import ExternalLink from '@/components/external-link';
 import { GitHubIcon, LinkedInIcon } from './assets';
 import styles from './styles.module.css';
 
