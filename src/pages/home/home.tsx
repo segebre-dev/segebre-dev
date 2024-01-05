@@ -1,4 +1,4 @@
-import { ExternalLink } from '../../components/external-link';
+import ExternalLink from '../../components/external-link';
 import { basePath } from '../../utils/constants';
 import styles from './styles.module.css';
 
