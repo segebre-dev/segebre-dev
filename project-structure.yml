@@ -14,7 +14,10 @@ rules:
       - name: /^(?:page|layout)$/
         extension: '.ts'
       - name: /^_(?:page|layout)$/
-        children:
-          - name: /^(?!layout$|page$)${{kebab-case}}/
+        ruleId: noPathAllowed
       - name: /^[^_]/
         ruleId: 'appFolder'
+  noPathAllowed:
+    children:
+      - name: /^(?!layout$|page$)${{kebab-case}}/
+      - ruleId: 'noPathAllowed'
