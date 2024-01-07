@@ -8,6 +8,7 @@ const ProfilePicture = () => (
     alt=""
     width={64}
     className={styles.profilePicture}
+    priority
   />
 );
 
