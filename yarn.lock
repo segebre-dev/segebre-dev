@@ -2194,7 +2194,7 @@
     "@typescript-eslint/typescript-estree" "6.13.2"
     semver "^7.5.4"
 
-"@typescript-eslint/utils@^5.58.0":
+"@typescript-eslint/utils@^5.57.0", "@typescript-eslint/utils@^5.58.0":
   version "5.62.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-5.62.0.tgz"
   integrity sha512-n8oxjeb5aIbPFEtmQxQYOLI0i9n5ySBEY/ZEHHZqKQSFnxio1rv6dthascc9dLuwrL0RC5mPCxB7vnAVGAYWAQ==
@@ -3477,6 +3477,14 @@ eslint-plugin-jsx-a11y@6.8.0:
     minimatch "^3.1.2"
     object.entries "^1.1.7"
     object.fromentries "^2.0.7"
+
+eslint-plugin-project-structure@1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-project-structure/-/eslint-plugin-project-structure-1.4.7.tgz#c56eb993a4c391de8830218f58b11591a440d0cb"
+  integrity sha512-VwcamMFxxE52D0qRQImwLfNEuXpN6OaOxlWNGNjigXRRMxz4/EHy/iw3k63bpfrBEli4CLfnvrbPt83NQE1wEg==
+  dependencies:
+    "@typescript-eslint/utils" "^5.57.0"
+    js-yaml "^4.1.0"
 
 eslint-plugin-react-hooks@4.6.0:
   version "4.6.0"
