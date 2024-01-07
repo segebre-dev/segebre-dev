@@ -11,3 +11,11 @@ test('renders name as heading', () => {
     })
   ).toBeInTheDocument();
 });
+
+test('renders text content', () => {
+  render(<Page />);
+
+  expect(screen.getByText('welcome', { exact: false })).toBeInTheDocument();
+  expect(screen.getByText('share', { exact: false })).toBeInTheDocument();
+  expect(screen.getByText('open source', { exact: false })).toBeInTheDocument();
+});
