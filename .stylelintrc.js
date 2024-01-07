@@ -21,6 +21,7 @@ module.exports = {
       },
     ],
     'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$',
+    'no-descending-specificity': null,
     'declaration-property-value-allowed-list': [
       {
         '/(?=^[^-]{2}).*color/': '/var\\(--color/',
