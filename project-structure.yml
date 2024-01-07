@@ -1,0 +1,15 @@
+ignorePatterns: ['pages/*'] # remove
+structure:
+  children:
+    - extension: '*'
+    - name: 'src'
+      children:
+        - name: 'components'
+        - name: 'utils'
+        - name: 'app'
+          children:
+            - name: /^(?:page|layout)$/
+              extension: '.ts'
+            - name: /^_(?:page|layout)$/
+              children:
+                - name: /^(?!layout$|page$)${{kebab-case}}/
