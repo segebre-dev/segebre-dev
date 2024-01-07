@@ -18,6 +18,9 @@
     "prepare": "husky install"
   },
   "lint-staged": {
+    "*.css": [
+      "yarn stylelint"
+    ],
     "*.@(ts|tsx)": [
       "yarn lint",
       "yarn format"
