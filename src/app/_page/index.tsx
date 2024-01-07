@@ -1,7 +1,11 @@
 import ProfilePicture from './profile-picture';
 
 const Page = () => {
-  return <ProfilePicture />;
+  return (
+    <>
+      <ProfilePicture />
+    </>
+  );
 };
 
 export default Page;

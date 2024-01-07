@@ -1,0 +1,25 @@
+# I decided to more finely document through comments this file as it is not very intuitive and will probably not be touched in a while.
+
+ignorePatterns: ['pages/*'] # remove after migration
+structure:
+  children:
+    - extension: '*' # we do not care about anything outside of the `src` folder
+    - name: 'src'
+      children:
+        - name: 'components'
+        - name: 'utils'
+        - name: 'app'
+          ruleId: 'appFolder' # we need to recursively check all the sub-folders of the `app` folder
+rules:
+  appFolder:
+    children:
+      - name: /^(?:page|layout)$/ # we only want to accept the `page` and `layout` files
+        extension: '.ts'
+      - name: /^_(?:page|layout)$/ # we want all the `page` and `layout` assets to exist under the respective folders `_page` and `_layout`
+        ruleId: noPathAllowed # We want to make sure no `page` or `layout` files exist under the `_page` and `_layout` folders
+      - name: /^[^_]/ # we support any folder that does not start with an `_` to allow the creation of further paths
+        ruleId: 'appFolder' # we recursively apply these rules to all sub-folders
+  noPathAllowed:
+    children:
+      - name: /^(?!layout$|page$)${{kebab-case}}/ # we allow anything that does not create a new path
+      - ruleId: 'noPathAllowed' # this should always propagate through children

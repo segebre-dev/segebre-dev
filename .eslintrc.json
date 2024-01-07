@@ -1,4 +1,5 @@
 {
+  "plugins": ["project-structure"],
   "extends": [
     "eslint:recommended",
     "plugin:jsx-a11y/recommended",
@@ -22,11 +23,26 @@
     },
     "import/resolver": {
       "typescript": {}
-    }
+    },
+    "project-structure/config-path": "project-structure.yml"
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "project-structure/file-structure": "error",
+    "no-console": [
+      2,
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
     "import/order": [
       2,
       {
@@ -40,19 +56,6 @@
           "object",
           "type"
         ]
-      }
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      2,
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_"
-      }
-    ],
-    "no-console": [
-      2,
-      {
-        "allow": ["warn", "error"]
       }
     ]
   }
