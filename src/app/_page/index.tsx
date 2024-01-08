@@ -10,15 +10,16 @@ const Page = () => {
         <p>Segebre Zaghmout</p>
       </h1>
       <div className={styles.content}>
-        <p>Hello 👋 and welcome to segebre.dev! 🎉 </p>
+        <p>Hey there! 👋 Welcome to segebre.dev! 🎉</p>
         <p>
-          Here, I try to post things that I learn 🤓, you might find it useful
-          😃, if so, please share it with others 🙌.
+          I'm here to share my learning journey 🤓, and hopefully, you'll find
+          it useful too 😃. If it strikes a chord with you, do spread the
+          knowledge 🙌.
         </p>
         <p>
-          This site is open source 📖 so if you find any mistakes ❌, please
-          feel free to open a pull request on GitHub and help avoid
-          misinformation 💪. Thank you in advance!❤️
+          This site is open source 📖, so if you happen to spot any errors ❌,
+          don't hesitate to jump in with a pull request on GitHub. Let's work
+          together to keep misinformation at bay 💪. Thanks a ton in advance! ❤️
         </p>
       </div>
     </>
