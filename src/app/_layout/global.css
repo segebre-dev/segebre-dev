@@ -48,6 +48,9 @@ html {
   --color-neutral-border: #1d2739; /* Grey/800 */
   --color-neutral-text: #f7f9fc; /* Grey/75 */
   --color-neutral-outline: #f9fafb; /* Grey/50 */
+  --color-primary-active: #cc400c; /* Primary/600 */
+  --color-primary-hover: #eb5017; /* Primary/500 */
+  --color-primary-base: #f56630; /* Primary/400 (base) */
 
   /* Spacing */
   --spacing-xxs: 0.25rem; /* 4px */

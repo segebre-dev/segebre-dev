@@ -24,7 +24,7 @@ module.exports = {
     'no-descending-specificity': null,
     'declaration-property-value-allowed-list': [
       {
-        '/(?=^[^-]{2}).*color/': '/var\\(--color/',
+        '/(?=^[^-]{2}).*color/': '/var\\(--color|^inherit$/',
         '/(?=^[^-]{2}).*(?:gap|padding|margin)/': '/var\\(--spacing|^0/',
       },
       {

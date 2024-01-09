@@ -1,3 +1,4 @@
 {
-  "css.customData": [".vscode/postcss.css-data.json"]
+  "css.customData": [".vscode/postcss.css-data.json"],
+  "cSpell.words": ["clsx"]
 }
