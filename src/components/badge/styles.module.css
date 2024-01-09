@@ -1,0 +1,15 @@
+.badge {
+  padding: var(--spacing-xxs) var(--spacing-s);
+  background: var(--color-primary-base);
+  border-radius: var(--spacing-s);
+}
+
+.clickable {
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+
+  &:active {
+    background: var(--color-primary-active);
+  }
+}

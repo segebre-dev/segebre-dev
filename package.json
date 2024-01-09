@@ -8,7 +8,7 @@
     "build": "next build",
     "build:clean": "rm -rf .next/",
     "start": "next start -p ${HTTP_PORT:-3000}",
-    "generate-css-types": "tcm -p '**/*.module.css' src",
+    "generate-css-types": "tcm -p '**/*.module.css' src && yarn format",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "stylelint": "stylelint 'src/**/*.css' --fix",
@@ -27,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "clsx": "2.1.0",
     "next": "14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
