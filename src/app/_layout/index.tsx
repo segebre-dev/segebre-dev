@@ -1,7 +1,15 @@
 import './global.css';
+import { Metadata } from 'next';
 import Footer from './footer';
 import styles from './styles.module.css';
 import type { LayoutProps } from './types';
+
+const metadata: Metadata = {
+  title: {
+    template: '%s | segebre.dev',
+    default: 'segebre.dev',
+  },
+};
 
 const Layout = ({ children }: LayoutProps) => (
   <html lang="en" className={styles.html}>
@@ -12,4 +20,5 @@ const Layout = ({ children }: LayoutProps) => (
   </html>
 );
 
+export { metadata };
 export default Layout;
