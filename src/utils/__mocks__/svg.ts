@@ -1,1 +1,3 @@
-export default 'img';
+const SVGIcon = 'img';
+
+export default SVGIcon;
