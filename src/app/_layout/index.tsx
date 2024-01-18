@@ -9,6 +9,9 @@ const metadata: Metadata = {
     template: '%s | segebre.dev',
     default: 'segebre.dev',
   },
+  description:
+    'The official site of Juan Enrique Segebre Zaghmout; A Software Engineer & Learning Advocate.',
+  metadataBase: new URL('https://segebre.dev'),
 };
 
 const Layout = ({ children }: LayoutProps) => (
