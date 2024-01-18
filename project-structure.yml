@@ -1,6 +1,5 @@
 # I decided to more finely document through comments this file as it is not very intuitive and will probably not be touched in a while.
 
-ignorePatterns: ['pages/*'] # remove after migration
 structure:
   children:
     - extension: '*' # we do not care about anything outside of the `src` folder
