@@ -1,5 +1,5 @@
 import './global.css';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import Footer from './footer';
 import styles from './styles.module.css';
 import type { LayoutProps } from './types';
@@ -54,6 +54,10 @@ const metadata: Metadata = {
   },
 };
 
+const viewport: Viewport = {
+  themeColor: '#101928',
+};
+
 const Layout = ({ children }: LayoutProps) => (
   <html lang="en" className={styles.html}>
     <body className={styles.body}>
@@ -63,5 +67,5 @@ const Layout = ({ children }: LayoutProps) => (
   </html>
 );
 
-export { metadata };
+export { metadata, viewport };
 export default Layout;
