@@ -12,4 +12,5 @@ const Layout = ({ children }: LayoutProps) => (
   </html>
 );
 
+export { metadata, viewport } from './metadata';
 export default Layout;

@@ -1,1 +1,1 @@
-export { default } from './_layout';
+export { default, metadata, viewport } from './_layout';
