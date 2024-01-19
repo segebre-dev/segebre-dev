@@ -10,10 +10,10 @@ const Footer = () => {
           href="https://github.com/segebre-dev/segebre-dev"
           noA11yIcon
         >
-          <GitHubIcon alt="Juan's GitHub page" />
+          <GitHubIcon aria-label="Juan's GitHub page" />
         </ExternalLink>
         <ExternalLink href="https://de.linkedin.com/in/segebre" noA11yIcon>
-          <LinkedInIcon alt="Juan's LinkedIn page" />
+          <LinkedInIcon aria-label="Juan's LinkedIn page" />
         </ExternalLink>
       </div>
       <div className={styles.authorMessageContainer}>
