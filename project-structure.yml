@@ -9,6 +9,10 @@ structure:
         - name: 'utils'
         - name: 'app'
           ruleId: 'appFolder' # we need to recursively check all the sub-folders of the `app` folder
+        - name: 'mdx-components'
+          extension: 'tsx'
+        - name: 'types.d'
+          extension: 'ts'
 rules:
   appFolder:
     children:
