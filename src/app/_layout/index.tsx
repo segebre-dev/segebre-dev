@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const Layout = ({ children }: PageLayoutProps) => (
   <html lang="en" className={styles.html}>
     <body className={styles.body}>
-      <div className={styles.content}>{children}</div>
+      <main className={styles.content}>{children}</main>
       <Footer />
     </body>
   </html>
