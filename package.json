@@ -14,7 +14,7 @@
     "stylelint": "stylelint 'src/**/*.css' --fix",
     "lint": "eslint --fix . --ext ts --ext tsx --ext js",
     "test": "jest",
-    "normalize": "yarn generate-css-types && yarn type-check && yarn format && yarn stylelint && yarn lint && yarn test",
+    "normalize": "yarn generate-css-types && yarn type-check && yarn stylelint && yarn lint && yarn test",
     "prepare": "husky install"
   },
   "lint-staged": {

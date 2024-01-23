@@ -52,6 +52,15 @@ html {
   --color-primary-hover: #eb5017; /* Primary/500 */
   --color-primary-base: #f56630; /* Primary/400 (base) */
 
+  /* Fonts */
+  --font-family: 'Segoe UI', tahoma, geneva, verdana, sans-serif;
+  --font-heading-1: 600 2rem/2.25rem var(--font-family);
+  --font-heading-2: 600 1.75rem/2rem var(--font-family);
+  --font-heading-3: 600 1.5rem/1.75rem var(--font-family);
+  --font-paragraph-l: 400 1rem/1.5rem var(--font-family);
+  --font-paragraph-m: 400 0.875rem/1.25rem var(--font-family);
+  --font-paragraph-s: 400 0.75rem/1rem var(--font-family);
+
   /* Spacing */
   --spacing-xxs: 0.25rem; /* 4px */
   --spacing-xs: 0.5rem; /* 8px */
@@ -59,8 +68,8 @@ html {
   --spacing-m: 1.5rem; /* 24px */
   --spacing-l: 2.25rem; /* 36px */
   --spacing-xl: 2.75rem; /* 44px */
-  --spacing-xxl: 3.5rem; /* 56 */
-  --spacing-3xl: 4.5rem; /* 72 */
+  --spacing-xxl: 3.5rem; /* 56px */
+  --spacing-3xl: 4.5rem; /* 72px */
   --spacing-grid-gap: 1.125rem;
 
   @media (width >= 48rem) {
@@ -93,6 +102,18 @@ html {
   }
 
   /* defaults */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: var(--font-paragraph-m);
   color: var(--color-neutral-text);
+
+  h1 {
+    font: var(--font-heading-1);
+  }
+
+  h2 {
+    font: var(--font-heading-2);
+  }
+
+  h3 {
+    font: var(--font-heading-3);
+  }
 }

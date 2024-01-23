@@ -22,10 +22,12 @@ module.exports = {
     ],
     'selector-class-pattern': '^[a-z][a-zA-Z0-9]+$',
     'no-descending-specificity': null,
+    'property-disallowed-list': ['font-size'],
     'declaration-property-value-allowed-list': [
       {
         '/(?=^[^-]{2}).*color/': '/var\\(--color|^inherit$/',
         '/(?=^[^-]{2}).*(?:gap|padding|margin)/': '/var\\(--spacing|^0/',
+        '/^font$/': '/var\\(--font|^inherit$/',
       },
       {
         message:
