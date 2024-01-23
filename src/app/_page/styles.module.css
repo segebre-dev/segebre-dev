@@ -1,11 +1,10 @@
 .heading {
   margin-top: var(--spacing-s);
-  font-size: x-large;
-  font-weight: 500;
   text-align: center;
 
   & > p {
     display: inline-block;
+    font: var(--font-heading-1);
 
     & + & {
       margin-left: var(--spacing-xs);
@@ -15,7 +14,7 @@
 
 .content {
   margin-top: var(--spacing-s);
-  font-size: small;
+  font: var(--font-paragraph-m);
   text-align: center;
 
   & > p {
