@@ -4,7 +4,7 @@
 
   & > p {
     display: inline-block;
-    font: var(--font-heading-1);
+    font: var(--font-heading-2);
 
     & + & {
       margin-left: var(--spacing-xs);
@@ -14,7 +14,6 @@
 
 .content {
   margin-top: var(--spacing-s);
-  font: var(--font-paragraph-m);
   text-align: center;
 
   & > p {
