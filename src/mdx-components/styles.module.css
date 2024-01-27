@@ -1,0 +1,18 @@
+.link {
+  color: var(--color-primary-base);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--color-primary-active);
+    text-decoration: underline;
+  }
+}
+
+.heading {
+  margin-top: var(--spacing-m);
+}
