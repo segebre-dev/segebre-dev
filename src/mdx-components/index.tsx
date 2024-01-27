@@ -33,11 +33,19 @@ const generateStyledHeading = (Heading: 'h2' | 'h3') => {
   return generatedComponent;
 };
 
+const styledParagraph = ({
+  className,
+  ...otherProps
+}: React.ComponentPropsWithoutRef<'p'>) => (
+  <p className={clsx(className, styles.paragraph)} {...otherProps} />
+);
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: styledA,
     h2: generateStyledHeading('h2'),
     h3: generateStyledHeading('h3'),
+    p: styledParagraph,
     ...components,
   };
 }

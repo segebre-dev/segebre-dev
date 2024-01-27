@@ -16,3 +16,7 @@
 .heading {
   margin-top: var(--spacing-m);
 }
+
+.paragraph {
+  margin: var(--spacing-xs) 0;
+}
