@@ -1,6 +1,6 @@
-svg {
-  &.inlineIcon {
-    position: relative;
-    top: 0.125em;
-  }
+.inlineIcon {
+  position: relative;
+  top: 0.125em;
+  display: inline-block;
+  margin-left: var(--spacing-xxs);
 }

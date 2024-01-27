@@ -2,15 +2,19 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import { BadgeProps } from './types';
 
-const Badge = ({ clickable = false, children }: BadgeProps) => {
+const Badge = ({ clickable = false, children, className }: BadgeProps) => {
   return (
-    <span
-      className={clsx(styles.badge, {
-        [styles.clickable]: clickable,
-      })}
+    <div
+      className={clsx(
+        styles.badge,
+        {
+          [styles.clickable]: clickable,
+        },
+        className
+      )}
     >
       {children}
-    </span>
+    </div>
   );
 };
 
