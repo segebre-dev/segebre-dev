@@ -1,6 +1,7 @@
 type BadgeProps = {
   clickable?: boolean;
-  children: string;
+  children: React.ReactNode;
+  className?: string;
 };
 
 export type { BadgeProps };

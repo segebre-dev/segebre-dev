@@ -1,5 +1,9 @@
 .badge {
-  padding: var(--spacing-xxs) var(--spacing-s);
+  display: inline-flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  padding: 0 var(--spacing-s);
+  color: var(--color-neutral-background);
   background: var(--color-primary-base);
   border-radius: var(--spacing-s);
 }
