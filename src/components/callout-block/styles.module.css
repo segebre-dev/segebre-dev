@@ -1,0 +1,9 @@
+.calloutBlock {
+  display: flex;
+  gap: var(--spacing-s);
+  align-items: flex-start;
+  padding: var(--spacing-s);
+  margin: var(--spacing-s) 0;
+  background: var(--color-neutral-border);
+  border-radius: var(--spacing-xs);
+}
