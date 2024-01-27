@@ -40,12 +40,20 @@ const styledParagraph = ({
   <p className={clsx(className, styles.paragraph)} {...otherProps} />
 );
 
+const styledBlockquote = ({
+  className,
+  ...otherProps
+}: React.ComponentPropsWithoutRef<'blockquote'>) => (
+  <blockquote className={clsx(className, styles.blockquote)} {...otherProps} />
+);
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: styledA,
     h2: generateStyledHeading('h2'),
     h3: generateStyledHeading('h3'),
     p: styledParagraph,
+    blockquote: styledBlockquote,
     ...components,
   };
 }
