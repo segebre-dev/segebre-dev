@@ -10,11 +10,7 @@ const styledA = ({
   className,
   ...otherProps
 }: React.ComponentPropsWithoutRef<'a'>) => (
-  <ExternalLink
-    href={href}
-    className={clsx(className, styles.link)}
-    {...otherProps}
-  >
+  <ExternalLink href={href} className={className} {...otherProps}>
     {children}
   </ExternalLink>
 );
