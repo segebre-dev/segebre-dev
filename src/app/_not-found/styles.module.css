@@ -1,0 +1,13 @@
+.heading {
+  margin-top: var(--spacing-3xl);
+  text-transform: uppercase;
+}
+
+.message {
+  margin-top: var(--spacing-s);
+  text-align: center;
+}
+
+.goHomeLink {
+  margin-top: var(--spacing-l);
+}

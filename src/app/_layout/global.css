@@ -41,6 +41,8 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* End of CSS reset */
+
 /* Design system */
 html {
   /* Colors */
@@ -116,5 +118,17 @@ html {
 
   h3 {
     font: var(--font-heading-3);
+  }
+
+  a {
+    color: var(--color-primary-base);
+
+    &:hover {
+      color: var(--color-primary-hover);
+    }
+
+    &:active {
+      color: var(--color-primary-active);
+    }
   }
 }

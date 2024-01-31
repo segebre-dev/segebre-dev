@@ -1,6 +1,6 @@
 declare const styles: {
-  readonly blockquote: string;
+  readonly goHomeLink: string;
   readonly heading: string;
-  readonly paragraph: string;
+  readonly message: string;
 };
 export = styles;
