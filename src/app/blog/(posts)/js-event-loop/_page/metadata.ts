@@ -1,9 +1,16 @@
 import { Metadata } from 'next';
 
-const metadata: Metadata = {
+const metainformation = {
   title: "An analogy on JavaScript's single-threaded asynchronicity.",
   description:
-    "Uncover the secrets of JavaScript's asynchronicity in this blog post, where we use a playful analogy featuring a waitperson, kitchen, and counter. Learn how parallel steps keep your requests smooth and why avoiding long tasks is crucial. Find out why some websites freeze! 🤓 #JavaScript #AsynchronousProgramming",
+    "Uncover the secrets of JavaScript's asynchronicity and the event loop in this blog post, where we use a playful analogy featuring a waitperson, kitchen, and counter. Learn how parallel steps keep your requests smooth and why avoiding long tasks is crucial. Find out why some websites freeze! 🤓 #JavaScript #AsynchronousProgramming #EventLoop",
+  date: '2023-03-03',
+  lengthInMinutes: 3,
+};
+
+const metadata: Metadata = {
+  title: metainformation.title,
+  description: metainformation.description,
   keywords: [
     'JavaScript',
     'Engineer',
@@ -12,14 +19,13 @@ const metadata: Metadata = {
     'event loop',
   ],
   openGraph: {
-    title: "An analogy on JavaScript's single-threaded asynchronicity.",
-    description:
-      "Uncover the secrets of JavaScript's asynchronicity in this blog post, where we use a playful analogy featuring a waitperson, kitchen, and counter. Learn how parallel steps keep your requests smooth and why avoiding long tasks is crucial. Find out why some websites freeze! 🤓 #JavaScript #AsynchronousProgramming",
-    url: 'https://segebre.dev/blog/an-analogy-of-javascripts-single-threaded-asynchronicity',
+    title: metainformation.title,
+    description: metainformation.description,
+    url: 'https://segebre.dev/blog/js-event-loop',
     siteName: 'segebre.dev',
     locale: 'en_US',
     type: 'article',
-    publishedTime: '2023-03-03',
+    publishedTime: metainformation.date,
     authors: ['Juan Enrique Segebre Zaghmout'],
     section: 'JavaScript',
     tags: [
@@ -33,4 +39,4 @@ const metadata: Metadata = {
   },
 };
 
-export { metadata };
+export { metadata, metainformation };
