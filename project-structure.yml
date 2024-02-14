@@ -36,6 +36,6 @@ rules:
     ruleId: 'appFolder' # we recursively apply these rules to all sub-folders
   noPathAllowed:
     children:
-      - name: /^(?!layout$|page$)${{kebab-case}}/ # we allow anything that does not create a new path
-      - name: /^(?!layout$|page$)${{kebab-case}}/ # we allow anything that does not create a new path
+      - name: /^(?!layout$|page$)${{kebab-case}}/ # we allow anything that does not create a new path as a file
+      - name: /^(?!layout$|page$)${{kebab-case}}/ # we allow anything that does not create a new path as a folder
         ruleId: noPathAllowed
