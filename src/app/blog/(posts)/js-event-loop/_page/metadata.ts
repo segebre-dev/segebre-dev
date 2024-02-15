@@ -7,6 +7,7 @@ const metainformation: BlogPostMetainformation = {
     "Uncover the secrets of JavaScript's asynchronicity and the event loop in this blog post, where we use a playful analogy featuring a waitperson, kitchen, and counter. Learn how parallel steps keep your requests smooth and why avoiding long tasks is crucial. Find out why some websites freeze! 🤓 #JavaScript #AsynchronousProgramming #EventLoop",
   date: new Date('2023-03-03'),
   lengthInMinutes: 3,
+  path: 'js-event-loop',
 };
 
 const metadata: Metadata = {
