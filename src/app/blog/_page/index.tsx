@@ -1,8 +1,7 @@
-import Card from '@/components/card/card';
-import PostMetadata from '@/components/post-metadata';
 import styles from './styles.module.css';
 import posts from './posts';
 import { metadata } from './metadata';
+import BlogPostCard from './blog-post-card';
 
 const Blog = () => (
   <>
@@ -10,13 +9,11 @@ const Blog = () => (
     <ul aria-label="posts" className={styles.list}>
       {posts.map(({ title, date, lengthInMinutes }) => (
         <li key={title}>
-          <Card className={styles.blogPost}>
-            <div>{title}</div>
-            <PostMetadata
-              date={new Date(date)}
-              lengthInMinutes={lengthInMinutes}
-            />
-          </Card>
+          <BlogPostCard
+            title={title}
+            date={date}
+            lengthInMinutes={lengthInMinutes}
+          />
         </li>
       ))}
     </ul>
