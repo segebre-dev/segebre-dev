@@ -30,7 +30,7 @@ const metadata: Metadata = {
     title: 'segebre.dev',
     description:
       'The official site of Juan Enrique Segebre Zaghmout; A Software Engineer & Learning Advocate.',
-    url: 'https://segebre.dev',
+    url: '/',
     siteName: 'segebre.dev',
     locale: 'en_US',
     type: 'website',
