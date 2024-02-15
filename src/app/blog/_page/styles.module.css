@@ -9,10 +9,3 @@
     list-style-type: none;
   }
 }
-
-.blogPost {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-s);
-  font: var(--font-paragraph-l);
-}
