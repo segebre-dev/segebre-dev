@@ -2,6 +2,7 @@ import Card from '@/components/card/card';
 import PostMetadata from '@/components/post-metadata';
 import styles from './styles.module.css';
 import posts from './posts';
+import { metadata } from './metadata';
 
 const Blog = () => (
   <>
@@ -22,4 +23,5 @@ const Blog = () => (
   </>
 );
 
+export { metadata };
 export default Blog;
