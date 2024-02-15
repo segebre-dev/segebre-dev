@@ -21,7 +21,7 @@ const metadata: Metadata = {
   openGraph: {
     title: metainformation.title,
     description: metainformation.description,
-    url: 'https://segebre.dev/blog/js-event-loop',
+    url: '/blog/js-event-loop',
     siteName: 'segebre.dev',
     locale: 'en_US',
     type: 'article',
