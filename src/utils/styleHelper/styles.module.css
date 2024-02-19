@@ -1,0 +1,9 @@
+.unstyleLink {
+  text-decoration: none;
+
+  &,
+  &:hover,
+  &:active {
+    color: var(--color-neutral-text);
+  }
+}

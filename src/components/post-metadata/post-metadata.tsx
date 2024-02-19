@@ -19,7 +19,7 @@ const PostMetadata = ({
   return (
     <div className={clsx(styles.container, className)}>
       <span className={styles.date}>{formattedDate}</span>
-      <Badge>
+      <Badge className={styles.timeLength}>
         <ClockIcon className={styles.icon} />
         {formattedLength}
       </Badge>
