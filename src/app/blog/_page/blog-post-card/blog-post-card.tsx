@@ -1,9 +1,9 @@
 import Card from '@/components/card';
 import PostMetadata from '@/components/post-metadata';
 import styles from './styles.module.css';
-import type { BlogPostProps } from './types';
+import type { BlogPostCardProps } from './types';
 
-const BlogPostCard = ({ title, date, lengthInMinutes }: BlogPostProps) => (
+const BlogPostCard = ({ title, date, lengthInMinutes }: BlogPostCardProps) => (
   <Card className={styles.blogPost}>
     <div>{title}</div>
     <PostMetadata date={date} lengthInMinutes={lengthInMinutes} />
