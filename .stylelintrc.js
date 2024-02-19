@@ -27,6 +27,7 @@ module.exports = {
       {
         '/(?=^[^-]{2}).*color/': '/var\\(--color|^inherit$/',
         '/(?=^[^-]{2}).*(?:gap|padding|margin)/': '/var\\(--spacing|^0/',
+        '/radius/': '/var\\(--spacing|^50%$/',
         '/^font$/': '/var\\(--font|^inherit$/',
       },
       {
