@@ -14,7 +14,7 @@
     "lint": "yarn lint:styles && yarn lint:files && yarn lint:others",
     "lint:styles": "stylelint 'src/**/*.css' --fix",
     "lint:files": "eslint --fix . --ext ts --ext tsx --ext js",
-    "lint:others": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext css,md,mdx ./src/app",
+    "lint:others": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext css,md,mdx ./src",
     "test": "jest",
     "normalize": "yarn generate-css-types && yarn type-check && yarn lint && yarn test",
     "prepare": "husky install"
