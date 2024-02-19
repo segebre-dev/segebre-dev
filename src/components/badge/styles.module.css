@@ -4,11 +4,13 @@
   align-items: center;
   padding: var(--spacing-xxs) var(--spacing-s);
   color: var(--color-neutral-background);
-  background: var(--color-primary-base);
+  background: var(--color-neutral-secondary-text);
   border-radius: var(--spacing-s);
 }
 
 .clickable {
+  background: var(--color-primary-base);
+
   &:hover {
     background: var(--color-primary-hover);
   }
