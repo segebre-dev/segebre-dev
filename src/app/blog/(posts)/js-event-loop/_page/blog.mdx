@@ -1,12 +1,13 @@
 import PostMetadata from '@/components/post-metadata';
 import CalloutBlock from '@/components/callout-block';
+import { metainformation } from './metadata';
 import styles from './styles.module.css';
 
-# An analogy on JavaScript's single-threaded asynchronicity.
+# {metainformation.title}
 
 <PostMetadata
-  date={new Date('2023-03-03')}
-  lengthInMinutes={3}
+  date={new Date(metainformation.date)}
+  lengthInMinutes={metainformation.lengthInMinutes}
   className={styles.metadata}
 />
 

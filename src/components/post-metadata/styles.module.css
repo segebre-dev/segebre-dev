@@ -5,11 +5,15 @@
 }
 
 .date {
-  font: var(--font-paragraph-l);
+  font: var(--font-paragraph-m);
   color: var(--color-neutral-secondary-text);
 }
 
 .icon {
   width: 1em;
   height: 1em;
+}
+
+.timeLength {
+  font: var(--font-paragraph-s);
 }

@@ -22,7 +22,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["./src/components/*"]
+      "@/components/*": ["./src/components/*"],
+      "@/styleHelper": ["./src/utils/styleHelper"]
     }
   },
   "exclude": ["node_modules", ".next", "out"],

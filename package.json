@@ -11,12 +11,12 @@
     "generate-css-types": "tcm -p '**/*.module.css' src && yarn format",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
-    "stylelint": "stylelint 'src/**/*.css' --fix",
-    "lint": "yarn lint:files && yarn lint:structure",
+    "lint": "yarn lint:styles && yarn lint:files && yarn lint:others",
+    "lint:styles": "stylelint 'src/**/*.css' --fix",
     "lint:files": "eslint --fix . --ext ts --ext tsx --ext js",
-    "lint:structure": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext css,md,mdx ./src/app",
+    "lint:others": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext css,md,mdx ./src",
     "test": "jest",
-    "normalize": "yarn generate-css-types && yarn type-check && yarn stylelint && yarn lint && yarn test",
+    "normalize": "yarn generate-css-types && yarn type-check && yarn lint && yarn test",
     "prepare": "husky install"
   },
   "lint-staged": {
