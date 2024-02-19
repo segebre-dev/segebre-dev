@@ -25,7 +25,7 @@ it('renders a formatted date based on the date provided', () => {
   expect(screen.getByText('05 Feb 2024')).toBeInTheDocument();
 });
 
-it('renders the time in minutes', () => {
+it('renders the reading length in minutes', () => {
   render(
     <BlogPostCard
       title="some very shinny title"
