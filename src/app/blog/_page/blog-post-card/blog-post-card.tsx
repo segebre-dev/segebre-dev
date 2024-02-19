@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import type { BlogPostCardProps } from './types';
 
 const BlogPostCard = ({ title, date, lengthInMinutes }: BlogPostCardProps) => (
-  <Card className={styles.blogPost}>
+  <Card className={styles.blogPost} clickable>
     <div>{title}</div>
     <PostMetadata date={date} lengthInMinutes={lengthInMinutes} />
   </Card>

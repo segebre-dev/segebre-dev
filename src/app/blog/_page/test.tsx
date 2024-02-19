@@ -10,11 +10,17 @@ it('renders the heading', () => {
   ).toBeInTheDocument();
 });
 
-it('renders the list of posts', () => {
+it('renders a link to each posts', () => {
   render(<BlogPage />);
 
   expect(screen.getByRole('list', { name: 'posts' })).toBeInTheDocument();
-  posts.forEach(({ title }) => {
-    expect(screen.getByText(title)).toBeInTheDocument();
+
+  posts.forEach(({ title, path }) => {
+    const linkToBlogPost = screen.getByRole('link', {
+      name: new RegExp(title),
+    });
+
+    expect(linkToBlogPost).toBeInTheDocument();
+    expect(linkToBlogPost).toHaveAttribute('href', `/blog/${path}`);
   });
 });
