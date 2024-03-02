@@ -1,5 +1,5 @@
 .profilePicture {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-xxl);
   border: 2px solid var(--color-neutral-outline);
   border-radius: 50%;
 }

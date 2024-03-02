@@ -14,5 +14,5 @@
   flex: auto;
   flex-direction: column;
   align-items: center;
-  margin: var(--spacing-xxl);
+  margin: var(--spacing-xs) var(--spacing-xxl);
 }
