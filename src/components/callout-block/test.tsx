@@ -7,6 +7,12 @@ it('renders "figure" landmark', () => {
   expect(screen.getByRole('figure')).toBeInTheDocument();
 });
 
+it('renders the icon provided', () => {
+  render(<CalloutBlock icon="some-icon">some children</CalloutBlock>);
+
+  expect(screen.getByText('some-icon')).toBeInTheDocument();
+});
+
 it('renders children', () => {
   render(
     <CalloutBlock>
