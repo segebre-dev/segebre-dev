@@ -23,94 +23,58 @@ Despite this limitation, we can achieve asynchronous behavior when working with 
 
 ## The Analogy
 
-<CalloutBlock>
-ℹ️
-
-This post is targeted at how JavaScript runs in the browser, however, many of these concepts translate to other runtime environments (e.g. Node.js).
-
+<CalloutBlock icon="ℹ️">
+  {
+    'This post is targeted at how JavaScript runs in the browser, however, many of these concepts translate to other runtime environments (e.g. Node.js).'
+  }
 </CalloutBlock>
 
 To simplify the different elements that take part in the analogy, I will gradually introduce them along the way. As I introduce the elements, I will leave callback blocks as quick references in case you need to refer back to something.
 
 ### The setup
 
-Let's imagine we have a 🛖 restaurant with only one 🧵waitperson.
+Let's imagine we have a <span aria-hidden>🛖</span> restaurant with only one <span aria-hidden>🧵</span>waitperson.
 
-<CalloutBlock>
-🛖
+<CalloutBlock icon="🛖">restaurant = Website</CalloutBlock>
 
-restaurant = Website
+The <span aria-hidden>🧵</span>waitperson is our interface to ask questions, get answers, and perform actions.
 
-</CalloutBlock>
+<CalloutBlock icon="🧵">waitperson = main JS thread</CalloutBlock>
 
-The 🧵waitperson is our interface to ask questions, get answers, and perform actions.
+The <span aria-hidden>🧵</span>waitperson can only attend to one <span aria-hidden>📝</span>order at a time. However, getting the client's order does NOT occur sequentially. Instead, everyone’s food goes through the same process of ordering, preparing, and serving at the “same time”. But there is only a single <span aria-hidden>🧵</span>waitperson, so how do they manage it? 🤔
 
-<CalloutBlock>
-🧵
-
-waitperson = main JS thread
-
-</CalloutBlock>
-
-The 🧵waitperson can only attend to one 📝order at a time. However, getting the client's order does NOT occur sequentially. Instead, everyone’s food goes through the same process of ordering, preparing, and serving at the “same time”. But there is only a single 🧵waitperson, so how do they manage it? 🤔
-
-<CalloutBlock>
-📝
-
-order = JS command
-
-</CalloutBlock>
+<CalloutBlock icon="📝">order = JS command</CalloutBlock>
 
 ### The flow
 
-In this case, the 🛖restaurant has more going on than the customers get to see. For example, it needs a ⚙kitchen to work. The customer usually does not know what is happening inside the ⚙kitchen, yet it handles much of the work required to deliver what they ordered. So, what is the flow here, and, once again, how does one 🧵waitperson manage to serve all the 📝orders concurrently?
+In this case, the <span aria-hidden>🛖</span>restaurant has more going on than the customers get to see. For example, it needs a <span aria-hidden>⚙</span>kitchen to work. The customer usually does not know what is happening inside the <span aria-hidden>⚙</span>kitchen, yet it handles much of the work required to deliver what they ordered. So, what is the flow here, and, once again, how does one <span aria-hidden>🧵</span>waitperson manage to serve all the <span aria-hidden>📝</span>orders concurrently?
 
-<CalloutBlock>
-⚙
-
-kitchen = Browser
-
-</CalloutBlock>
+<CalloutBlock icon="⚙">kitchen = Browser</CalloutBlock>
 
 Let's break it down:
 
-1. A customer makes an 📝order; during this time, the 🧵waitperson is blocked and cannot answer anyone else or do anything else during this time.
-2. Once that is finished, the 🧵waitperson either immediately fulfills the request(e.g. the customer asks for a straw) or takes the 📝order to the ⚙kitchen.
-3. The ⚙kitchen prepares the 📝order using 🔪kitchen utensils and tools.
-4. Once the 📝order is done, ⚙the kitchen puts it on the 🛎️counter.
-5. Eventually, when the 🧵waitperson is free, the 🧑‍🍳kitchen assistant (who is needed in this case to coordinate between the busy 🧵waitperson and ⚙kitchen) picks up the order from the 🛎️counter and gives it to the 🧵waitperson.
-6. The 🧵waitperson then delivers it to the customers.
+1. A customer makes an <span aria-hidden>📝</span>order; during this time, the <span aria-hidden>🧵</span>waitperson is blocked and cannot answer anyone else or do anything else during this time.
+2. Once that is finished, the <span aria-hidden>🧵</span>waitperson either immediately fulfills the request(e.g. the customer asks for a straw) or takes the <span aria-hidden>📝</span>order to the <span aria-hidden>⚙</span>kitchen.
+3. The <span aria-hidden>⚙</span>kitchen prepares the <span aria-hidden>📝</span>order using <span aria-hidden>🔪</span>kitchen utensils and tools.
+4. Once the <span aria-hidden>📝</span>order is done, <span aria-hidden>⚙</span>the kitchen puts it on the <span aria-hidden>🛎️</span>counter.
+5. Eventually, when the <span aria-hidden>🧵</span>waitperson is free, the <span aria-hidden>🧑‍🍳</span>kitchen assistant (who is needed in this case to coordinate between the busy <span aria-hidden>🧵</span>waitperson and <span aria-hidden>⚙</span>kitchen) picks up the order from the <span aria-hidden>🛎️</span>counter and gives it to the <span aria-hidden>🧵</span>waitperson.
+6. The <span aria-hidden>🧵</span>waitperson then delivers it to the customers.
 
-<CalloutBlock>
-🔪
+<CalloutBlock icon="🔪">kitchen utensils and tools = Web APIs</CalloutBlock>
 
-kitchen utensils and tools = Web APIs
+<CalloutBlock icon="🧑‍🍳">kitchen assistant = The event loop</CalloutBlock>
 
-</CalloutBlock>
-
-<CalloutBlock>
-🧑‍🍳
-
-kitchen assistant = The event loop
-
-</CalloutBlock>
-
-<CalloutBlock>
-🛎️
-
-counter = The task queue
-
-</CalloutBlock>
+<CalloutBlock icon="🛎️">counter = The task queue</CalloutBlock>
 
 ## In conclusion
 
-The beauty of this is that during steps 3 and 4, the 🧵waitperson is free and can do other things. So, the 🧵waitperson returns to other customers and gets more 📝orders, and the process repeats.
+The beauty of this is that during steps 3 and 4, the <span aria-hidden>🧵</span>waitperson is free and can do other things. So, the <span aria-hidden>🧵</span>waitperson returns to other customers and gets more <span aria-hidden>📝</span>orders, and the process repeats.
 
-Steps 1, 2, 5, and 6 can ONLY be done sequentially; in other words, the waiter cannot take two tables' 📝orders simultaneously. However, steps 3 and 4 can happen in parallel, the ⚙kitchen can and will cook as many 📝orders as possible.
+Steps 1, 2, 5, and 6 can ONLY be done sequentially; in other words, the waiter cannot take two tables' <span aria-hidden>📝</span>orders simultaneously. However, steps 3 and 4 can happen in parallel, the <span aria-hidden>⚙</span>kitchen can and will cook as many <span aria-hidden>📝</span>orders as possible.
 
-Interestingly enough, the 🧵waitperson steps tend to be quick, and the ⚙kitchen steps tend to be slow. Still, the ⚙kitchen has more than one person working on the orders, so everything works smoothly and seems to happen fully in parallel.
+Interestingly enough, the <span aria-hidden>🧵</span>waitperson steps tend to be quick, and the <span aria-hidden>⚙</span>kitchen steps tend to be slow. Still, the <span aria-hidden>⚙</span>kitchen has more than one person working on the orders, so everything works smoothly and seems to happen fully in parallel.
 
-Note that it is critically important that you do not give long tasks to the 🧵waitperson; If you do, for example, ask the 🧵waitperson to cook, then they will be blocked in cooking while customers are waiting to place their 📝orders. No one answers their calls and rings, making it seem like the 🛖restaurant is frozen.
+Note that it is critically important that you do not give long tasks to the <span aria-hidden>🧵</span>waitperson; If you do, for example, ask the <span aria-hidden>🧵</span>waitperson to cook, then they will be blocked in cooking while customers are waiting to place their <span aria-hidden>📝</span>orders. No one answers their calls and rings, making it seem like the <span aria-hidden>🛖</span>restaurant is frozen.
 
 I guess now we know why websites that use JavaScript freeze sometimes. 🤓
 
