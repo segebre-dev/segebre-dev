@@ -1,0 +1,15 @@
+.nav {
+  margin-top: var(--spacing-m);
+}
+
+.navList {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: 0;
+  list-style-type: none;
+
+  & a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
