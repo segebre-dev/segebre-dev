@@ -1,4 +1,5 @@
 import ProfilePicture from './profile-picture';
+import Navigation from './navigation';
 import styles from './styles.module.css';
 
 const Page = () => {
@@ -9,6 +10,7 @@ const Page = () => {
         <p>Juan Enrique</p>
         <p>Segebre Zaghmout</p>
       </h1>
+      <Navigation />
       <div className={styles.content}>
         <p>Hey there! 👋 Welcome to segebre.dev! 🎉</p>
         <p>

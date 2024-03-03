@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Page from '.';
 
-test('renders name as heading', () => {
+it('renders name as heading', () => {
   render(<Page />);
 
   expect(
@@ -12,7 +12,13 @@ test('renders name as heading', () => {
   ).toBeInTheDocument();
 });
 
-test('renders text content', () => {
+it('renders the navigation', () => {
+  render(<Page />);
+
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+});
+
+it('renders text content', () => {
   render(<Page />);
 
   expect(screen.getByText('welcome', { exact: false })).toBeInTheDocument();

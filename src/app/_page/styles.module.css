@@ -16,7 +16,7 @@
   margin-top: var(--spacing-s);
   text-align: center;
 
-  & > p {
+  & > p + p {
     margin-top: var(--spacing-xs);
   }
 }
