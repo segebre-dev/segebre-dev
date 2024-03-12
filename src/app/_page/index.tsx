@@ -19,9 +19,12 @@ const Page = () => {
           knowledge 🙌.
         </p>
         <p>
-          This site is open source 📖, so if you happen to spot any errors ❌,
-          don't hesitate to jump in with a pull request on GitHub. Let's work
-          together to keep misinformation at bay 💪. Thanks a ton in advance! ❤️
+          This site is open source 📖, and I'm proud to say it's a personal pet
+          project. It's ad-free because I don't make any money from it, nor do I
+          intend to do so; I'm simply sharing what I'm interested in. If you
+          happen to spot any errors ❌, don't hesitate to jump in with a pull
+          request on GitHub. Let's work together to keep misinformation at bay
+          💪. Thanks a ton in advance! ❤️
         </p>
       </div>
     </>
