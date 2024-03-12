@@ -24,4 +24,5 @@ it('renders text content', () => {
   expect(screen.getByText('welcome', { exact: false })).toBeInTheDocument();
   expect(screen.getByText('share', { exact: false })).toBeInTheDocument();
   expect(screen.getByText('open source', { exact: false })).toBeInTheDocument();
+  expect(screen.getByText('personal', { exact: false })).toBeInTheDocument();
 });
