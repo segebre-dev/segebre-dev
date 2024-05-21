@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Fragment } from 'react';
 import styles from './styles.module.css';
 import useNavigationLinks, { NavigationLink } from './use-navigation-links';
 
@@ -17,9 +18,12 @@ const NavigationBreadcrumbs = () => {
     <nav aria-label="breadcrumbs" className={styles.container}>
       <ol>
         {navigationLinks.map(({ name, path }) => (
-          <li key={path}>
-            <Link href={path}>{name}</Link>
-          </li>
+          <Fragment key={path}>
+            <li>
+              <Link href={path}>{name}</Link>
+            </li>
+            <span aria-hidden="true"> / </span>
+          </Fragment>
         ))}
         <li aria-current="page">{currentPage.name}</li>
       </ol>

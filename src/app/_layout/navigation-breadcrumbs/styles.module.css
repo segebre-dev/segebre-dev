@@ -7,11 +7,6 @@
 
     li {
       display: inline-block;
-
-      & + &::before {
-        padding: 0 var(--spacing-xs);
-        content: '/' / '';
-      }
     }
   }
 }
