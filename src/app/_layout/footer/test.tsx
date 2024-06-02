@@ -46,3 +46,11 @@ it('renders the copyright', () => {
     )
   ).toBeInTheDocument();
 });
+
+it('renders the imprint', () => {
+  render(<Footer />);
+
+  const githubLink = screen.getByRole('link', { name: /Imprint/ });
+  expect(githubLink).toBeInTheDocument();
+  expect(githubLink).toHaveAttribute('href', '/imprint');
+});
