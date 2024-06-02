@@ -1,0 +1,15 @@
+.categoryTitle {
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contactDefinitionList {
+  dt,
+  dd {
+    display: inline;
+
+    & + & {
+      margin-left: var(--spacing-xxs);
+    }
+  }
+}
