@@ -35,5 +35,14 @@ it('renders the author message', () => {
   render(<Footer />);
 
   expect(screen.getByText(/Developed by/)).toBeInTheDocument();
-  expect(screen.getByText(/Juan Enrique Segebre Zaghmout/)).toBeInTheDocument();
+});
+
+it('renders the copyright', () => {
+  render(<Footer />);
+
+  expect(
+    screen.getByText(
+      /© 2021 Juan Enrique Segebre Zaghmout. All rights reserved./
+    )
+  ).toBeInTheDocument();
 });
