@@ -30,7 +30,7 @@ rules:
     name: /^(?:page|layout)$/ # we only want to accept the `page` and `layout` files
     extension: '.ts'
   pageAndLayoutFolders:
-    name: /^_(?:page|layout)$/ # we want all the `page` and `layout` assets to exist under the respective folders `_page` and `_layout`
+    name: /^_(?:page|layout|shared)$/ # we want all the `page` and `layout` assets to exist under the respective folders `_page` and `_layout`
     ruleId: noPathAllowed # We want to make sure no `page` or `layout` files exist under the `_page` and `_layout` folders
   subPaths:
     name: /^(?!_)\(?${{kebab-case}}\)?$/ # we support any folder that does not start with an `_` to allow the creation of further paths
