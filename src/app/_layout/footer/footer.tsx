@@ -20,7 +20,9 @@ const Footer = () => {
         <p>Developed by</p>
         <p>Juan Enrique Segebre Zaghmout</p>
       </div>
-      <div>© 2021 Juan Enrique Segebre Zaghmout. All rights reserved.</div>
+      <div className={styles.text}>
+        © 2021 Juan Enrique Segebre Zaghmout. All rights reserved.
+      </div>
     </footer>
   );
 };
