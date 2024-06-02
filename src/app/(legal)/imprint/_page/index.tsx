@@ -50,6 +50,14 @@ const Imprint = () => (
       <br />
       Deutschland
     </p>
+    <h2 className={styles.categoryTitle}>Disclaimer</h2>
+    <p>
+      The content on this website is for informational purposes only. While
+      efforts are made to ensure the accuracy of the information, no guarantee
+      is provided. The owner is not responsible for the content of external
+      links. The operators of linked sites are solely responsible for their
+      content.
+    </p>
   </>
 );
 
