@@ -1,9 +1,10 @@
+import sharedStyles from '../../_shared/styles.module.css';
 import styles from './styles.module.css';
 
 const Imprint = () => (
   <>
     <h1>Imprint</h1>
-    <h2 className={styles.categoryTitle}>
+    <h2 className={sharedStyles.header2}>
       Information in accordance with § 5 TMG
     </h2>
     <p lang="de">
@@ -17,7 +18,7 @@ const Imprint = () => (
       <br />
       Deutschland
     </p>
-    <h2 className={styles.categoryTitle}>Contact Information</h2>
+    <h2 className={sharedStyles.header2}>Contact Information</h2>
     <dl className={styles.contactDefinitionList}>
       <div>
         <dt>Email:</dt>
@@ -36,7 +37,7 @@ const Imprint = () => (
         </dd>
       </div>
     </dl>
-    <h2 className={styles.categoryTitle}>
+    <h2 className={sharedStyles.header2}>
       Responsible for content according to § 55 II RStV
     </h2>
     <p lang="de">
@@ -50,7 +51,7 @@ const Imprint = () => (
       <br />
       Deutschland
     </p>
-    <h2 className={styles.categoryTitle}>Disclaimer</h2>
+    <h2 className={sharedStyles.header2}>Disclaimer</h2>
     <p>
       The content on this website is for informational purposes only. While
       efforts are made to ensure the accuracy of the information, no guarantee
