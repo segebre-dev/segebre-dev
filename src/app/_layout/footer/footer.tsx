@@ -24,6 +24,7 @@ const Footer = () => {
       <div className={styles.legalLinksContainer}>
         <Link href="/imprint">Imprint</Link>
         <Link href="/privacy">Privacy policy</Link>
+        <Link href="/terms">Terms of use</Link>
       </div>
       <div className={styles.text}>
         © 2021 Juan Enrique Segebre Zaghmout. All rights reserved.
