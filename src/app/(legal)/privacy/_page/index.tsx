@@ -3,7 +3,7 @@ import sharedStyles from '../../_shared/styles.module.css';
 
 const PrivacyPage = () => (
   <>
-    <h1>Privacy Policy</h1>
+    <h1>Privacy policy</h1>
     <h2 className={sharedStyles.header2}>Introduction</h2>
     <p>
       Segebre.dev respects your privacy and is committed to protecting your
