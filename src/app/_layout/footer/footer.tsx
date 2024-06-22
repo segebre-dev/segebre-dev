@@ -21,8 +21,9 @@ const Footer = () => {
         <p>Developed by</p>
         <p>Juan Enrique Segebre Zaghmout</p>
       </div>
-      <div>
+      <div className={styles.legalLinksContainer}>
         <Link href="/imprint">Imprint</Link>
+        <Link href="/privacy">Privacy policy</Link>
       </div>
       <div className={styles.text}>
         © 2021 Juan Enrique Segebre Zaghmout. All rights reserved.

@@ -54,3 +54,11 @@ it('renders the imprint', () => {
   expect(githubLink).toBeInTheDocument();
   expect(githubLink).toHaveAttribute('href', '/imprint');
 });
+
+it('renders the privacy policy', () => {
+  render(<Footer />);
+
+  const githubLink = screen.getByRole('link', { name: /Privacy policy/ });
+  expect(githubLink).toBeInTheDocument();
+  expect(githubLink).toHaveAttribute('href', '/privacy');
+});

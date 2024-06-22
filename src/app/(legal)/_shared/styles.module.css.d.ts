@@ -1,4 +1,4 @@
 declare const styles: {
-  readonly contactDefinitionList: string;
+  readonly header2: string;
 };
 export = styles;
