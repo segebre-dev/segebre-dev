@@ -47,7 +47,7 @@ it('renders the copyright', () => {
   ).toBeInTheDocument();
 });
 
-it('renders the imprint', () => {
+it('renders the link to the imprint page', () => {
   render(<Footer />);
 
   const githubLink = screen.getByRole('link', { name: /Imprint/ });
@@ -55,10 +55,18 @@ it('renders the imprint', () => {
   expect(githubLink).toHaveAttribute('href', '/imprint');
 });
 
-it('renders the privacy policy', () => {
+it('renders the link to the privacy policy page', () => {
   render(<Footer />);
 
   const githubLink = screen.getByRole('link', { name: /Privacy policy/ });
   expect(githubLink).toBeInTheDocument();
   expect(githubLink).toHaveAttribute('href', '/privacy');
+});
+
+it('renders the link to the terms of use page', () => {
+  render(<Footer />);
+
+  const githubLink = screen.getByRole('link', { name: /Terms of use/ });
+  expect(githubLink).toBeInTheDocument();
+  expect(githubLink).toHaveAttribute('href', '/terms');
 });
