@@ -21,7 +21,7 @@ const Footer = () => {
         <p>Developed by</p>
         <p>Juan Enrique Segebre Zaghmout</p>
       </div>
-      <div>
+      <div className={styles.legalLinksContainer}>
         <Link href="/imprint">Imprint</Link>
       </div>
       <div className={styles.text}>
