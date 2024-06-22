@@ -7,7 +7,7 @@ const homeNavigationLink = {
 };
 
 const useNavigationLinks: UseNavigationLinks = () => {
-  const pathname = usePathname().substring(1); // remove the initial '/' to avoid edge-cases when splitting by '/'.
+  const pathname = (usePathname() ?? '/').substring(1); // remove the initial '/' to avoid edge-cases when splitting by '/'.
 
   if (pathname === '') {
     // We are in the home page

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ExternalLink from '@/components/external-link';
 import { GitHubIcon, LinkedInIcon } from './assets';
 import styles from './styles.module.css';
@@ -19,6 +20,9 @@ const Footer = () => {
       <div className={styles.authorMessageContainer}>
         <p>Developed by</p>
         <p>Juan Enrique Segebre Zaghmout</p>
+      </div>
+      <div>
+        <Link href="/imprint">Imprint</Link>
       </div>
       <div className={styles.text}>
         © 2021 Juan Enrique Segebre Zaghmout. All rights reserved.
