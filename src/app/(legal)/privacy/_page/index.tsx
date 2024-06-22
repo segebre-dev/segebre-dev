@@ -45,11 +45,11 @@ const PrivacyPage = () => (
     </p>
     <h2 className={sharedStyles.header2}>Changes to This Policy</h2>
     <p>
-      We may update this privacy policy from time to time. Changes will be
-      posted on this page.
+      We may update this privacy policy from time to time. The up-to-date
+      version will continue to be available on this page.
     </p>
     <h2 className={sharedStyles.header2}>Effective Date</h2>
-    <p>This policy is effective as of 2024-06-02.</p>
+    <p>This policy is effective as of 2024-06-22.</p>
   </>
 );
 
