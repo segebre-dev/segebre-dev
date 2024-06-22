@@ -53,4 +53,5 @@ const PrivacyPage = () => (
   </>
 );
 
+export { metadata } from './metadata';
 export default PrivacyPage;
