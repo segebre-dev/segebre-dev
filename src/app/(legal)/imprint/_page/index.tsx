@@ -61,4 +61,5 @@ const Imprint = () => (
   </>
 );
 
+export { metadata } from './metadata';
 export default Imprint;
