@@ -1,27 +1,30 @@
-# NextJS Typescript Boilerplate
+Welcome
 
-Bootstrap a developer-friendly NextJS app configured with:
+Consistency is key.
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
+Things I care about and can be found here?
 
-## Deploy your own
+- Testing
+- git hooks
+- Typing
+- Consistency
+- lint css
+- lint project structure
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+# code
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
+Code is under `src`
 
-## How to use
+styles.module.css
+styles.module.css.d.ts
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+# How to navigate the project
 
-```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Every folder is meant to be self contained.
+Things are as close to their usage as possible (containerizing everything).
+\_ means private, there should never be a page exposed under it, no matter the depth.
+Styles are done using CSS modules, no need for more than that, full control, reusable styles, typed to avoid lingering, using theme, minimum amount of CSS possible, every line has a meaning.
+Tests are self documenting, the output is meant to be read and understood without the need to see the test, the output should describe the unit being tested and its expected behaviour
+A11y is taken into consideration and treated as a first class citizen, every part of the site should/is a11y. If you find a place where it is not, please open an issue.
+SEO is put in place and practice, website is very small, but googling my name should make it appear as a first result.
+There are a few constrains put in place, I believe scalability is only achievable through measured constraint. The whole site is fully modifiable and everything is changeable, but it is setup so only what should be changed can be changed. It is a personal project, but after 6 months the author is expected to be a "new joiner" in the project. Because of this, and trying to make it accessible to anyone, I setup and follow standards through constraint.
