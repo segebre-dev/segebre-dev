@@ -29,10 +29,6 @@ const Imprint = () => (
       <div>
         <dt>Phone:</dt>
         <dd>
-          <a href="tel:+4915224816539">+49 1522 4816539</a>
-        </dd>
-        <span aria-hidden="true"> / </span>
-        <dd>
           <a href="tel:+4917659722532">+49 176 59722532</a>
         </dd>
       </div>
