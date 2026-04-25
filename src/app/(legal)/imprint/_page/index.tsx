@@ -12,9 +12,9 @@ const Imprint = () => (
       <br />
       c/o Tyagi
       <br />
-      Buschingstraße 9
+      Ute-Strittmatter-Str 9
       <br />
-      81677 München
+      81248 München
       <br />
       Deutschland
     </p>
@@ -29,10 +29,6 @@ const Imprint = () => (
       <div>
         <dt>Phone:</dt>
         <dd>
-          <a href="tel:+4915224816539">+49 1522 4816539</a>
-        </dd>
-        <span aria-hidden="true"> / </span>
-        <dd>
           <a href="tel:+4917659722532">+49 176 59722532</a>
         </dd>
       </div>
@@ -45,9 +41,9 @@ const Imprint = () => (
       <br />
       c/o Tyagi
       <br />
-      Buschingstraße 9
+      Ute-Strittmatter-Str 9
       <br />
-      81677 München
+      81248 München
       <br />
       Deutschland
     </p>
